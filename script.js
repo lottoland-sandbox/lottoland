@@ -14,6 +14,7 @@ function nextStep(step) {
         'Display Type': 'impression',
     };
     event_properties['Feature'] = Feature; 
+    event_properties['Domain'] = Domain; 
     amplitude.track('display', event_properties);
 }
 
@@ -29,6 +30,7 @@ function prevStep(step) {
         'Display Type': 'impression',
     };
     event_properties['Feature'] = Feature;
+    event_properties['Domain'] = Domain; 
     amplitude.track('display', event_properties);
 }
 
@@ -84,6 +86,7 @@ console.log(event_properties);
 
     
     event_properties['Feature'] = Feature;
+    event_properties['Domain'] = Domain; 
     amplitude.track('outcome', event_properties);
 
     // Redirect to the confirmation page after submission.
@@ -135,6 +138,7 @@ function trackOnFieldFocus(event) {
 
         // Fire amplitude tracking with 'focus' event type
         event_properties['Feature'] = Feature;
+        event_properties['Domain'] = Domain; 
         amplitude.track('click', event_properties);
     }
 }
@@ -167,6 +171,7 @@ function trackLinkClick(event) {
 
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
+        event_properties['Domain'] = Domain; 
         amplitude.track('click', event_properties);
     }
 }
@@ -208,7 +213,7 @@ function trackButtonClick(event) {
 
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
-      
+      event_properties['Domain'] = Domain; 
         if (!event_properties['Campaign']) {event_properties['Campaign'] = utmCampaign;}
         if(!event_properties['Offer']) {event_properties['Offer'] = Promo;}        
         event_properties['Source'] = utmSource;
