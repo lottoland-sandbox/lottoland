@@ -51,21 +51,38 @@ function submitForm() {
         Name: 'outcome',
     };
 
-    // Generate a random number between 0 and 99
-    var randomNumber = Math.floor(Math.random() * 100);
+    // Generate random number between 1 and 100
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
 
-    // Assuming a 20% failure rate
+    // Initialize event properties object
+    var event_properties = {};
+
+    // Check if randomNumber is less than 20
     if (randomNumber < 20) {
         // Track failure
         event_properties.Outcome = 'failure';
-        event_properties.Error = 'Duplicate_Account';
+        // Generate random error value
+        var errors = ['Duplicate_Account', 'System_Unavailable', 'Fraud', 'Network_Issue'];
+        var randomErrorIndex = Math.floor(Math.random() * errors.length);
+        event_properties.Error = errors[randomErrorIndex];
         alert('Registration Failure');
     } else {
         // Track success
         event_properties.Outcome = 'success';
-        event_properties.Status = 'verified';
+        // Generate random status value
+        var statuses = ['verified', 'unverified'];
+        var randomStatusIndex = Math.floor(Math.random() * statuses.length);
+        event_properties.Status = statuses[randomStatusIndex];
         alert('Registration Success');
     }
+
+// Example output
+console.log(event_properties);
+
+
+
+
+    
     event_properties['Feature'] = Feature;
     amplitude.track('outcome', event_properties);
 
