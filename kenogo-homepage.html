@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KenoGo Homepage v4.8</title>
+<style>
+
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.header {
+    background-color: #92C11F;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+    
+    .carousel {
+        width: calc(100%); /* Subtracting 50px for the gap */
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+    }
+    .panel {
+        width: 400px;
+        height: 200px;
+        display: inline-block;
+        scroll-snap-align: start;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        text-align: center;
+        position: relative;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .image {
+        width: 200px;
+        height: 200px;
+       
+    }
+     .panel-image {
+        width: 100%;
+        height: 100%;
+       
+    }
+
+    /* Additional carousel for winners */
+    .winners-carousel {
+        width: calc(100%); /* Subtracting 50px for the gap */
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 20px;
+    }
+    .winner-panel {
+        width: 200px;
+        height: 30px;
+        display: inline-block;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        text-align: center;
+        margin-right: 10px;
+    }
+
+    /* Panel with tabs */
+    .tab-panel {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .tab-button {
+        margin-right: 20px;
+        cursor: pointer;
+        color: blue;
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: #A4CC26;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    .tab-content {
+        margin-top: 20px;
+    }
+
+    /* Panel with game buttons */
+    .game-panel {
+        width: calc(100% - 40px); /* Subtracting 40px for padding */
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto 20px; /* Center and add bottom margin */
+    }
+    .game-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .game-text {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+// INITIALISE TRACKING *****        
+!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-BHj/6N+ZSiRDYRUHPEqr/nwkUsSk3s9r1ryQeFBc4x2OiVz4peW3jSccKZsoU8Ry",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-beta.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var f=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<v.length;y++)n(f,v[y]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+amplitude.init('535a35b01503cd1dc00df9f74f844368', {
+    defaultTracking: {
+        pageViews: false,
+    },
+});
+
+// GET URL PARAMETER
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+        
+// PAGE DISPLAY TRACKING *****
+var Feature = 'homepage';
+var utmCampaign = getUrlParameter('utm_campaign');
+var utmSource = getUrlParameter('utm_source');
+var utmMedium = getUrlParameter('utm_medium');
+var Promo = getUrlParameter('promo');  
+var Affiliate = getUrlParameter('affiliate_id');
+var event_properties = {
+    'Feature': Feature,
+    'Id': 'homepage',
+    'Category': '',
+    'Display Type': 'pageLoad',
+};
+amplitude.track('display', event_properties);
+
+</script>    
+    
+</head>
+<body>
+    <!-- LOGO -->    
+<div class="header">
+    <img class="logo" src="kenogo.png" alt="Lottoland Logo">
+</div>
+
+<div class="carousel">
+
+      <div class="panel">
+        <img class="panel-image" src="balls.png" alt="Image 1">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="classic" >Game</button>
+    </div>
+       <div class="panel">
+        <img class="panel-image" src="ballsblue.png" alt="Image 5">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="promotion" data-track-campaign="Home Page" data-track-offer="Offer 1" data-track-genre="lottery" data-track-product="jackpot" >Promo</button>
+    </div>
+    <div class="panel">
+        <img class="panel-image" src="balls.png" alt="Image 1">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="login" >Log in</button>
+    </div>
+    <div class="panel">
+        <img class="panel-image" src="ballsblue.png" alt="Image 2">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="register" >Register</button>
+    </div>
+    <div class="panel">
+        <img class="panel-image" src="balls.png" alt="Image 3">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="deposit" >Deposit</button>
+    </div>
+    <div class="panel">
+        <img class="panel-image" src="ballsblue.png" alt="Image 4">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="blog" data-track-value="Victorian nearly scores $10 MILLION win!" data-track-category="information" >Blog</button>
+    </div>
+    <div class="panel">
+        <img class="panel-image" src="balls.png" alt="Image 5">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="faqs"  data-track-value="What are hot and cold numbers?" data-track-category="information" >FAQs</button>
+    </div>
+    <div class="panel">
+        <img class="panel-image" src="ballsblue.png" alt="Image 4">
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="external" data-track-value="Apple App Store"  data-track-category="information" >External</button>
+    </div>
+</div>
+
+<div class="winners-carousel" id="winnersCarousel">
+    <div class="winner-panel">Jackpot Winner 1 - $1000</div>
+    <div class="winner-panel">Jackpot Winner 2 - $1500</div>
+    <div class="winner-panel">Jackpot Winner 3 - $2000</div>
+    <div class="winner-panel">Jackpot Winner 4 - $2500</div>
+    <div class="winner-panel">Jackpot Winner 5 - $3000</div>
+    <div class="winner-panel">Jackpot Winner 6 - $3500</div>
+    <div class="winner-panel">Jackpot Winner 7 - $4000</div>
+    <div class="winner-panel">Jackpot Winner 8 - $4500</div>
+    <!-- Add more winner panels as needed -->
+</div>
+
+<div class="tab-panel panel">
+    <button class="tab-button" onclick="changeTab(1)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="jackpot" >Jackpot</button>
+    <button class="tab-button" onclick="changeTab(2)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="classic" >Classic</button>
+    <button class="tab-button" onclick="changeTab(3)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="headsOrTails" >Heads or Tails</button>
+    <div id="tabContent" class="tab-content"></div>
+    <button class="play-button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="jackpot"  >Play Jackpot</button>
+    <button class="play-button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="classic"  >Play Classic</button>
+    <button class="play-button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="headsOrTails"  >Play Heads or Tails</button>
+    
+</div>
+    
+
+<div class="game-panel panel" id="gamePanel">
+    <div class="game-text" id="gameText">Game 50</div>
+    <div id="gameButtons">
+        <button class="game-button" onclick="changeGame(50)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="50" >50</button>
+        <button class="game-button" onclick="changeGame(49)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="49" >49</button>
+        <button class="game-button" onclick="changeGame(48)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="48" >48</button>
+        <button class="game-button" onclick="changeGame(47)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="47" >47</button>
+        <button class="game-button" onclick="changeGame(46)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="46" >46</button>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle tab switching
+    function changeTab(tabNumber) {
+        const tabContent = document.getElementById('tabContent');
+        let imageSrc, buttonText, buttonAction;
+        switch (tabNumber) {
+            case 1:
+                imageSrc = 'keno-jackpot.png';
+                break;
+            case 2:
+                imageSrc = 'keno-classic.png';
+                break;
+            case 3:
+                imageSrc = 'keno-headsortails.png';
+                break;
+            default:
+                imageSrc = '';
+               
+        }
+        tabContent.innerHTML = `
+            <img class="image" src="${imageSrc}" alt="Tab Image">
+            
+        `;
+    }
+
+    // JavaScript to handle game button clicks
+    function changeGame(gameNumber) {
+        const gamePanel = document.getElementById('gamePanel');
+        const gameText = document.getElementById('gameText');
+        gameText.textContent = `Game ${gameNumber}`;
+    }
+
+    // Show default tab and game panel
+    changeTab(1);
+</script>
+<script src="script.js"></script>
+</body>
+</html>
