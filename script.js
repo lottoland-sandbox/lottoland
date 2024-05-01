@@ -58,7 +58,7 @@ function submitForm() {
     var event_properties = {};
 
     // Check if randomNumber is less than 20
-    if (randomNumber < 20) {
+    if (randomNumber < 99) {
         // Track failure
         event_properties.Outcome = 'failure';
         // Generate random error value
