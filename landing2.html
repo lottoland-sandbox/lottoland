@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page 2.1</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+<script>
+// INITIALISE TRACKING *****        
+!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-BHj/6N+ZSiRDYRUHPEqr/nwkUsSk3s9r1ryQeFBc4x2OiVz4peW3jSccKZsoU8Ry",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-beta.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var f=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<v.length;y++)n(f,v[y]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+amplitude.init('535a35b01503cd1dc00df9f74f844368', {
+    defaultTracking: {
+        pageViews: false,
+    },
+});
+
+// GET URL PARAMETER
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}    
+        
+// PAGE DISPLAY TRACKING *****
+var Feature = 'landing';
+var utmCampaign = getUrlParameter('utm_campaign');
+var utmSource = getUrlParameter('utm_source');
+var utmMedium = getUrlParameter('utm_medium');
+var Promo = getUrlParameter('promo');  
+var Affiliate = getUrlParameter('affiliate_id');      
+    
+    
+var event_properties = {
+    'Feature': Feature,
+    'Id': 'Landing 2',
+    'Campaign': utmCampaign,
+    'Source': utmSource,
+    'Medium': utmMedium,
+    'Offer': Promo,
+    'Partner': Affiliate,
+    'Display Type': 'pageLoad',
+};
+amplitude.track('display', event_properties);  
+</script>
+
+
+     <script type="text/javascript">
+!function(){"use strict";!function(e,t){var n=e.amplitude||{_q:[],_iq:{}};if(n.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var r=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,n){return function(r){e._q.push({name:t,args:Array.prototype.slice.call(n,0),resolve:r})}},o=function(e,t,n){e[t]=function(){if(n)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))}}},i=function(e){for(var t=0;t<m.length;t++)o(e,m[t],!1);for(var n=0;n<g.length;n++)o(e,g[n],!0)};n.invoked=!0;var u=t.createElement("script");u.type="text/javascript",u.integrity="sha384-x0ik2D45ZDEEEpYpEuDpmj05fY91P7EOZkgdKmq4dKL/ZAVcufJ+nULFtGn0HIZE",u.crossOrigin="anonymous",u.async=!0,u.src="https://cdn.amplitude.com/libs/analytics-browser-2.0.0-min.js.gz",u.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var a=t.getElementsByTagName("script")[0];a.parentNode.insertBefore(u,a);for(var c=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],l=0;l<p.length;l++)r(c,p[l]);n.Identify=c;for(var d=function(){return this._q=[],this},f=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],v=0;v<f.length;v++)r(d,f[v]);n.Revenue=d;var m=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],g=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];i(n),n.createInstance=function(e){return n._iq[e]={_q:[]},i(n._iq[e]),n._iq[e]},e.amplitude=n}}(window,document)}();
+
+amplitude.init('32578d06753416306c7ed9ae8ee6adcc');
+</script>   
+    
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="logo-lotto.png" alt="Lottoland Logo">
+    </div>
+    <div class="progress-bar">
+        <div class="progress-bar-inner" style="width: 0;"></div>
+    </div>
+    <div class="form-container">
+        <form id="landing-form" action="submit_registration.php" method="post">
+            <div class="form-step active" id="step-1">
+                <h2>Free Spins:</h2>
+                <p>Spin the reels and win with our free spins promotion. Try your luck now!</p>
+                <button type="button" id="landing.button.register"  onclick="redirectToRegistration()" data-track-container="landing 2" data-track-object="button" data-track-name="register" >Register</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+           <a id="link.facebook" class="social-link" href="#" data-track-container="footer" data-track-object="link" data-track-name="Facebook" data-track-category="Social" >Facebook</a>
+            <a id="link.twitter" class="social-link" href="#" data-track-container="footer" data-track-object="link" data-track-name="X (Twitter)" data-track-category="Social" >Twitter</a>
+            <a id="link.instagram" class="social-link" href="#" data-track-container="footer" data-track-object="link" data-track-name="Instagram" data-track-category="Social" >Instagram</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
