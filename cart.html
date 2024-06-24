@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.0</title>
+    <title>Cart 1.1</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -13,17 +13,7 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
     },
 });
         
-// PAGE DISPLAY TRACKING *****
-var Feature = 'registration';
-var Domain="www.lottoland.com"        
-var event_properties = {
-    'Domain': Doamin,
-    'Feature': Feature,
-    'Id': 'register',
-    'Category': 'Step 1',
-    'Display Type': 'pageLoad',
-};
-amplitude.track('display', event_properties);
+
 
 </script>
 </head>
@@ -35,7 +25,7 @@ amplitude.track('display', event_properties);
         body {
             font-family: Arial, sans-serif;
         }
-        .overlay {
+        .overlayClearCart {
             display: none;
             position: fixed;
             top: 0;
@@ -68,23 +58,33 @@ amplitude.track('display', event_properties);
 </head>
 <body>
 
-<button class="button" onclick="openOverlay()">Open Clear Cart Overlay (2.9)</button>
+<button class="button" onclick="openOverlayClearCart()">[2.9] Open Clear Cart Overlay</button>
 
-<div id="overlay" class="overlay">
+<div id="overlay" class="overlayClearCart">
     <div class="overlay-content">
         <p>Overlay Content</p>
-        <button class="button" onclick="closeOverlay()">Clear Cart and Checkout</button>
-        <button class="button" onclick="closeOverlay()">Keep items and add to Cart</button>
+        <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="clear" data-track-category="quickBuy" data-track-genre="lottery">Clear Cart and Checkout</button>
+        <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="back" data-track-category="quickBuy" data-track-genre="lottery">Keep items and add to Cart</button>
     </div>
 </div>
 
 <script>
-    function openOverlay() {
+    function openOverlayClearCart() {
         document.getElementById('overlay').style.display = 'flex';
+        // PAGE DISPLAY TRACKING *****
+        var Feature = 'cart';
+        var Domain="www.lottoland.com"        
+        var event_properties = {
+        'Domain': Doamin,
+        'Feature': Feature,
+        'Display Type': 'impression',
+        'Container': 'clearCart',    
+        };
+        amplitude.track('display', event_properties);
     }
 
-    function closeOverlay() {
-        document.getElementById('overlay').style.display = 'none';
+    function closeOverlayClearCart() {
+        document.getElementById('overlayClearCart').style.display = 'none';
     }
 </script>
             
