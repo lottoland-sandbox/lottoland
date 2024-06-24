@@ -20,18 +20,17 @@ var utmMedium="";
 var Affiliate="";
 var Promo="";
 
-    // PAGE DISPLAY TRACKING *****
-        var Feature = 'cart';
-        var Domain="www.lottoland.com" ;       
-        var event_properties = {
+// PAGE DISPLAY TRACKING *****
+var Feature = 'cart';
+var Domain="www.lottoland.com" ;       
+var event_properties = {
         'Domain': Domain,
         'Feature': Feature,
         'Display Type': 'pageLoad',
         'Id': 'emptyCart',  
         'genre': 'lottery',    
-      
         };
-        amplitude.track('display', event_properties);
+amplitude.track('display', event_properties);
      
 </script>
 </head>
