@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Empty Cart 1.8</title>
+    <title>Empty Cart 1.9</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -66,6 +66,57 @@ amplitude.track('display', event_properties);
 <button type="button" class="button"  data-track-container="emptyCart" data-track-object="link" data-track-name="back" data-track-genre="lottery" >Back</button>
 <button type="button" class="button"  data-track-container="emptyCart" data-track-object="link" data-track-name="bet" data-track-genre="lottery">Bet Now</button>
 
-<script src="script.js"></script>
+
+
+
+<script>
+function trackInteraction(event) {
+    const target = event.target;
+    let trackType, trackName, trackContainer, trackObject, trackCategory, trackValue, trackOutcome;
+    
+    if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
+        trackType = 'click';
+        trackValue="firstfocusin";
+    } else if (target.tagName === 'A' && target.hasAttribute('data-track-name')) {
+        trackType = 'click';
+         trackValue = target.getAttribute('data-track-value') || '';
+    } else if (target.tagName === 'BUTTON' && target.hasAttribute('data-track-name')) {
+        trackType = 'click';
+         trackValue = target.getAttribute('data-track-value') || '';
+    }
+
+    if (trackType) {
+        trackName = target.getAttribute('data-track-name');
+        trackContainer = target.getAttribute('data-track-container') || '';
+        trackObject = target.getAttribute('data-track-object') || '';
+        trackCategory = target.getAttribute('data-track-category') || '';
+        trackOutcome = target.getAttribute('data-track-outcome') || '';
+
+    if (trackName === 'submit' && trackOutcome !== '') {
+        trackType = 'outcome';
+    }
+
+
+        const event_properties = {
+            'Name': trackName,
+            'Container': trackContainer,
+            'Object': trackObject,
+            'Category': trackCategory,
+            'Value': trackValue,
+            'Outcome': trackOutcome,
+            'Feature': Feature,
+            'Domain': Domain
+        };
+
+
+        
+        amplitude.track(trackType, event_properties);
+    }
+}
+
+// Event listeners
+document.addEventListener('click', trackInteraction);
+</script>
+    
 </body>
 </html>
