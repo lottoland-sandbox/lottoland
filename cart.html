@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.10</title>
+    <title>Cart 1.11</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -64,15 +64,30 @@ var Promo="";
 </head>
 <body>
 
+<!-- 2.9 CLEAR CART (QUICK BUY) -->    
 <button class="button" onclick="openOverlayClearCart()">[2.9] Open Clear Cart Overlay</button>
 
 <div id="overlayClearCart" class="overlayClearCart">
     <div class="overlay-content">
-        <p>Overlay Content</p>
+        <h1>2.9 CLEAR CART (QUICK BUY)</h1>
+        <p>Previously added items will be removed from your cart</p>
         <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="clear" data-track-category="quickBuy" data-track-genre="lottery">Clear Cart and Checkout</button>
         <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="back" data-track-category="quickBuy" data-track-genre="lottery">Keep items and add to Cart</button>
     </div>
 </div>
+
+<!-- 2.9a CLEAR CART (CALL ALL) -->    
+<button class="button" onclick="openOverlayClearAll()">[2.9a] Open Clear All Overlay</button>
+
+<div id="overlayClearCartAll" class="overlayClearCart">
+    <div class="overlay-content">
+         <h1>2.9a CLEAR CART (CALL ALL)</h1>
+        <p>Are you sure you want to empty your cart</p>
+        <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="clear" data-track-category="quickBuy" data-track-genre="lottery">Clear Cart and Checkout</button>
+        <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="back" data-track-category="quickBuy" data-track-genre="lottery">Keep items and add to Cart</button>
+    </div>
+</div>
+    
 
 <script>
     function openOverlayClearCart() {
