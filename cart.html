@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.11</title>
+    <title>Cart 1.12</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -42,6 +42,7 @@ var Promo="";
             justify-content: center;
             align-items: center;
         }
+       
         .overlay-content {
             background: white;
             padding: 20px;
@@ -83,8 +84,8 @@ var Promo="";
     <div class="overlay-content">
          <h1>2.9a CLEAR CART (CALL ALL)</h1>
         <p>Are you sure you want to empty your cart</p>
-        <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="clear" data-track-category="quickBuy" data-track-genre="lottery">Clear Cart and Checkout</button>
-        <button class="button" onclick="closeOverlayClearCart()" data-track-container="clearCart" data-track-object="link" data-track-name="back" data-track-category="quickBuy" data-track-genre="lottery">Keep items and add to Cart</button>
+        <button class="button" onclick="closeOverlayClearAll()" data-track-container="clearCart" data-track-object="link" data-track-name="clear" data-track-category="cart" data-track-genre="lottery">Yes, Go Ahead/button>
+        <button class="button" onclick="closeOverlayClearAll()" data-track-container="clearCart" data-track-object="link" data-track-name="back" data-track-category="cart" data-track-genre="lottery">Go Back</button>
     </div>
 </div>
     
@@ -109,6 +110,28 @@ var Promo="";
     function closeOverlayClearCart() {
         document.getElementById('overlayClearCart').style.display = 'none';
     }
+
+ function openOverlayClearAll() {
+        document.getElementById('overlayClearCart').style.display = 'flex';
+        // PAGE DISPLAY TRACKING *****
+        var Feature = 'cart';
+        var Domain="www.lottoland.com"        
+        var event_properties = {
+        'Domain': Domain,
+        'Feature': Feature,
+        'Display Type': 'impression',
+        'Container': 'clearCart',    
+        'Category': 'cart',    
+            
+        };
+        amplitude.track('display', event_properties);
+    }
+
+    function closeOverlayClearCart() {
+        document.getElementById('overlayClearCart').style.display = 'none';
+    }
+
+    
 </script>
             
   
