@@ -160,13 +160,19 @@ function trackLinkClick(event) {
         var trackContainer = target.getAttribute('data-track-container') || '';
         var trackObject = target.getAttribute('data-track-object') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
+        var trackGenre = target.getAttribute('data-track-genre') || '';
+        var trackProduct = target.getAttribute('data-track-product') || '';
+        var trackDescription = target.getAttribute('data-track-description') || '';
 
         // Construct event properties object
         var event_properties = {
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
-            Category: trackCategory
+            Category: trackCategory,
+              Genre: trackGenre,
+            Product: trackProduct,
+            Description: trackDescription,
         };
 
         // Fire amplitude tracking with 'click' event type
@@ -196,6 +202,8 @@ function trackButtonClick(event) {
         var trackOffer = target.getAttribute('data-track-offer') || '';
         var trackGenre = target.getAttribute('data-track-genre') || '';
         var trackProduct = target.getAttribute('data-track-product') || '';
+        var trackDescription = target.getAttribute('data-track-description') || '';
+        
 
 
         // Construct event properties object
@@ -209,6 +217,7 @@ function trackButtonClick(event) {
             Offer: trackOffer,
             Genre: trackGenre,
             Product: trackProduct,
+            Description: trackDescription,
         };
 
         // Fire amplitude tracking with 'click' event type
