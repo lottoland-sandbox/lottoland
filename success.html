@@ -45,6 +45,22 @@ var Promo="";
 
  
     <style>
+         .menu-bar {
+            display: flex;
+            background-color: yellow;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .menu-bar a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-bar a:hover {
+            background-color: green;
+        }
         body {
             font-family: Arial, sans-serif;
         }
@@ -74,7 +90,13 @@ var Promo="";
 
 </head>
 <body>
-
+<div class="menu-bar">
+        <a href="cart.html">Cart</a>
+        <a href="emptycart.html">Empty Cart</a>
+        <a href="success.html">Success</a>
+        <a href="viewticket.html">View Ticket</a>
+    </div>
+<hr>
 
  <h1>3.1 PAYMENT SUCCESSFUL</h1>
   <p>Your payment was successful</p>
