@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.16</title>
+    <title>Cart 1.17</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -43,6 +43,18 @@ var Promo="";
             align-items: center;
         }
           .overlayClearAll {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+            .overlaySuspended {
             display: none;
             position: fixed;
             top: 0;
@@ -99,6 +111,19 @@ var Promo="";
         <button class="button" onclick="closeOverlayClearAll()" data-track-container="clearCart" data-track-object="link" data-track-name="back" data-track-category="cart" data-track-genre="lottery">Go Back</button>
     </div>
 </div>
+
+
+<!-- 2.5 SUSPENDED - From Cart -->    
+<button class="button" onclick="openOverlaySuspended()">[2.5] Suspended from Cart</button>
+
+<div id="overlayClearSuspended" class="overlayClearAll">
+    <div class="overlay-content">
+         <h1>2.5 SUSPENDED - From Cart</h1>
+        <p>Your account is suspended and can't place bets</p>
+        <button class="button" onclick="closeOverlaySuspended()" data-track-container="suspended" data-track-object="button" data-track-name="cancel" data-track-category="cart" data-track-genre="lottery">Cancel</button>
+        <button class="button" onclick="closeOverlaySuspended()" data-track-container="suspended" data-track-object="button" data-track-name="contact" data-track-category="cart" data-track-genre="lottery">Contact Support</button>
+    </div>
+</div>    
     
 
 <script>
@@ -142,6 +167,28 @@ var Promo="";
         document.getElementById('overlayClearAll').style.display = 'none';
          window.location.href = 'https://lottoland-sandbox.github.io/lottoland/emptycart.html';
     }
+
+     function openOverlaySuspended() {
+        document.getElementById('overlayClearAll').style.display = 'flex';
+        // PAGE DISPLAY TRACKING *****
+        var Feature = 'cart';
+        var Domain="www.lottoland.com"        
+        var event_properties = {
+        'Domain': Domain,
+        'Feature': Feature,
+        'Display Type': 'impression',
+        'Container': 'suspended',    
+        'Category': 'cart',    
+            
+        };
+        amplitude.track('display', event_properties);
+    }
+
+    function closeOverlaySuspended() {
+        document.getElementById('overlayClearAll').style.display = 'none';
+         window.location.href = 'https://lottoland-sandbox.github.io/lottoland/emptycart.html';
+    }
+
 
     
 </script>
