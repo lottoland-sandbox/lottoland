@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.24</title>
+    <title>Cart 1.25</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -103,7 +103,9 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
         .button:hover {
             background-color: #45a049;
         }
-
+     .hidden {
+            display: none;
+        }
 
 .links {
     margin-top: 10px;
@@ -160,6 +162,11 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
  <a id="back" class="link" href="#" data-track-container="cart" data-track-object="link" data-track-name="back" data-track-genre="lottery" >Back</a>
  <a id="back" class="link" href="#" data-track-container="cart" data-track-object="link" data-track-name="clear" data-track-genre="lottery" >Clear All</a>   
 
+
+
+<button type="button" id="depositButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="deposit" data-track-genre="lottery" >Deposit Now</button>
+<button type="button" id="balanceButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="pay" data-track-genre="lottery" >Pay with Balance</button>
+    
 <script>
     function openOverlayClearCart() {
         document.getElementById('overlayClearCart').style.display = 'flex';
@@ -223,7 +230,19 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
         
     }
 
+document.addEventListener("DOMContentLoaded", function() {
+            var status = "deposit"; // Change this value to "deposit" or "balance"
+            var depositButton = document.getElementById("depositButton");
+            var balanceButton = document.getElementById("balanceButton");
 
+            if (status === "deposit") {
+                balanceButton.classList.add("hidden");
+                depositButton.classList.remove("hidden");
+            } else if (status === "balance") {
+                depositButton.classList.add("hidden");
+                balanceButton.classList.remove("hidden");
+            }
+        });
     
 </script>
             
