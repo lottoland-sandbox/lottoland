@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.35</title>
+    <title>Cart 1.36</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -251,6 +251,10 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
         'Genre': 'lottery',    
         };
         amplitude.track('display', event_properties);
+    }
+
+       function closeOverlayCartItemRemove() {
+        document.getElementById('overlayCartItemRemove').style.display = 'none';
     }
     
    function openOverlayCartItemMenu(Position,LotteryId,Description) {
