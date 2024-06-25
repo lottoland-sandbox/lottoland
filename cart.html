@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.25</title>
+    <title>Cart 1.26</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -231,14 +231,14 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
     }
 
 document.addEventListener("DOMContentLoaded", function() {
-            var status = "deposit"; // Change this value to "deposit" or "balance"
+          
             var depositButton = document.getElementById("depositButton");
             var balanceButton = document.getElementById("balanceButton");
 
-            if (status === "deposit") {
+            if (Status === "deposit") {
                 balanceButton.classList.add("hidden");
                 depositButton.classList.remove("hidden");
-            } else if (status === "balance") {
+            } else if (Status === "balance") {
                 depositButton.classList.add("hidden");
                 balanceButton.classList.remove("hidden");
             }
