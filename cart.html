@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.37</title>
+    <title>Cart 1.38</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -238,7 +238,7 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
 
 
     function openOverlayCartItemRemove() {
-        closeOverlayCartItemRemove();
+        document.getElementById('overlayCartItemMenu').style.display = 'none';
         document.getElementById('overlayCartItemRemove').style.display = 'flex';
         // PAGE DISPLAY TRACKING *****
         var Feature = 'cart';
