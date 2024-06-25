@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.41</title>
+    <title>Cart 1.42</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -47,6 +47,25 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
 
   <title>Overlay Example</title>
     <style>
+      .menu-bar {
+            display: flex;
+            background-color: yellow;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .menu-bar a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-bar a:hover {
+            background-color: green;
+        }
+
+
+        
         body {
             font-family: Arial, sans-serif;
         }
@@ -152,7 +171,13 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
 
 </head>
 <body>
-
+<div class="menu-bar">
+        <a href="cart.html">Cart</a>
+        <a href="emptycart.html">Empty Cart</a>
+        <a href="success.html">Success</a>
+        <a href="viewticket.html">View Ticket</a>
+    </div>
+<hr>
 
  <h1>2.8 CART</h1>
 
