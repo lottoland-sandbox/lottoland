@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Ticket 1.8</title>
+    <title>View Ticket 1.9</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -104,7 +104,7 @@ var Promo="";
 </hr>
      <h1>2.11 CONFIRMATION</h1>
     <button onclick="openOverlayCartItemAdded()" class="button"  data-track-container="draws" data-track-object="button" data-track-name="addToCart"  data-track-genre="lottery" data-track-category="confirm"  data-track-product="powerBall" data-track-description="R15.2 Billion">Add To Cart</button>  
-    <button class="button"  data-track-container="draws" data-track-object="button" data-track-name="quickBuy"  data-track-genre="lottery" data-track-category="confirm" data-track-product="powerBall" data-track-description="R15.2 Billion">Quick Buy</button>  
+    <button onclick="paySuccess()" class="button"  data-track-container="draws" data-track-object="button" data-track-name="quickBuy"  data-track-genre="lottery" data-track-category="confirm" data-track-product="powerBall" data-track-description="R15.2 Billion">Quick Buy</button>  
     
     
 
@@ -114,7 +114,7 @@ var Promo="";
     <div class="overlay-content">
         <h1>3.0 ADDED TO CART CONFIRMATION</h1>
         <p>Ticket added to cart successfully</p>
-        <button class="button" onclick="closeOverlayCartItemAdded()" data-track-container="cartConfirmation" data-track-object="button" data-track-name="viewCart"  data-track-genre="lottery">View Cart</button>
+        <button class="button" onclick="closeOverlayCartItemAddedView()" data-track-container="cartConfirmation" data-track-object="button" data-track-name="viewCart"  data-track-genre="lottery">View Cart</button>
         <button class="button" onclick="closeOverlayCartItemAdded()" data-track-container="cartConfirmation" data-track-object="button" data-track-name="bet" data-track-genre="lottery">Bet Again</button>
     </div>
 </div>    
@@ -137,6 +137,16 @@ var Promo="";
 
        function closeOverlayCartItemAdded() {
         document.getElementById('overlayCartItemAdded').style.display = 'none';
+    }
+
+
+    function closeOverlayCartItemAddedView() {
+        document.getElementById('overlayCartItemAdded').style.display = 'none';
+        window.location.href = 'https://lottoland-sandbox.github.io/lottoland/cart.html';
+    }
+
+    function paySuccess() {
+        window.location.href = 'https://lottoland-sandbox.github.io/lottoland/success.html';
     }
     </script>
 
