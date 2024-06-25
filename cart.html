@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.39</title>
+    <title>Cart 1.40</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -232,8 +232,8 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
     </table>
 
 
-<button type="button" id="depositButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="deposit" data-track-genre="lottery" >Deposit Now</button>
-<button type="button" id="balanceButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="pay" data-track-genre="lottery" >Pay with Balance</button>
+<button  onclick="paySuccess()" type="button" id="depositButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="deposit" data-track-genre="lottery" >Deposit Now</button>
+<button  onclick="paySuccess()" type="button" id="balanceButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="pay" data-track-genre="lottery" >Pay with Balance</button>
     
 <script>
 
@@ -356,6 +356,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 balanceButton.classList.remove("hidden");
             }
         });
+
+
+      function paySuccess() {
+         window.location.href = 'https://lottoland-sandbox.github.io/lottoland/success.html';
+    }
+
     
 </script>
             
