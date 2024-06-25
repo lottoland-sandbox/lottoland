@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.23</title>
+    <title>Cart 1.24</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -103,6 +103,18 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
         .button:hover {
             background-color: #45a049;
         }
+
+
+.links {
+    margin-top: 10px;
+}
+
+.link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+}
+        
     </style>
 </head>
 <body>
@@ -143,7 +155,10 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
         <button class="button" onclick="closeOverlaySuspended()" data-track-container="suspended" data-track-object="button" data-track-name="contact" data-track-category="cart" data-track-genre="lottery">Contact Support</button>
     </div>
 </div>    
-    
+
+
+ <a id="back" class="link" href="#" data-track-container="cart" data-track-object="link" data-track-name="back" data-track-genre="lottery" >Back</a>
+ <a id="back" class="link" href="#" data-track-container="cart" data-track-object="link" data-track-name="clear" data-track-genre="lottery" >Clear All</a>   
 
 <script>
     function openOverlayClearCart() {
