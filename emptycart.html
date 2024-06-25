@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empty Cart 1.13</title>
     <style>
+         .menu-bar {
+            display: flex;
+            background-color: yellow;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .menu-bar a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-bar a:hover {
+            background-color: green;
+        }
         body {
             font-family: Arial, sans-serif;
         }
@@ -75,6 +91,13 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
     </script>
 </head>
 <body>
+<div class="menu-bar">
+        <a href="cart.html">Cart</a>
+        <a href="emptycart.html">Empty Cart</a>
+        <a href="success.html">Success</a>
+        <a href="viewticket.html">View Ticket</a>
+    </div>
+<hr>
     <h1>2.7 EMPTY CART</h1>
     <p>Your cart is empty</p>
 
