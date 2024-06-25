@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.28</title>
+    <title>Cart 1.29</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -172,9 +172,15 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
  <a id="back" class="link" href="#" data-track-container="cart" data-track-object="link" data-track-name="clear" data-track-genre="lottery" >Clear All</a>   
 
     <table>
-        <tr><td>SA Powrball Lotto Bet</td><td>R450.00</td><td>...</td></tr>
-        <tr><td>EuroMillions Lotto Bet</td><td>R7.50</td><td>...</td></tr>
-        <tr><td>MegaMillions Lotto Bet</td><td>R12.00</td><td>...</td></tr>
+        <tr><td>SA Powerball Lotto Bet</td><td>R450.00</td><td>
+          <button class="button" onclick="openOverlayCartItemMenu('1','SA Powerball','R270 Million payout')">:</button>
+        </td></tr>
+        <tr><td>EuroMillions Lotto Bet</td><td>R7.50</td><td>
+          <button class="button" onclick="openOverlayCartItemMenu('2','Euromillions','R3.4 Billion payout')">:</button>
+        </td></tr>
+        <tr><td>MegaMillions Lotto Bet</td><td>R12.00</td><td>
+          <button class="button" onclick="openOverlayCartItemMenu('3','Megamillions','R1.9 Billion payout')">:</button>
+        </td></tr>
     </table>
 
 
@@ -182,6 +188,12 @@ var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
 <button type="button" id="balanceButton" class="hidden" data-track-container="cart" data-track-object="button" data-track-name="pay" data-track-genre="lottery" >Pay with Balance</button>
     
 <script>
+
+   function openOverlayCartItemMenu(Position,LotteryId,Description) {
+       
+   }
+
+    
     function openOverlayClearCart() {
         document.getElementById('overlayClearCart').style.display = 'flex';
         // PAGE DISPLAY TRACKING *****
