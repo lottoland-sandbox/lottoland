@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart 1.19</title>
+    <title>Cart 1.21</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
 <script type="text/javascript">
@@ -20,6 +20,25 @@ var utmSource="";
 var utmMedium="";
 var Affiliate="";
 var Promo="";
+var Status = Math.random() < 0.5 ? 'deposit' : 'balance';
+       
+
+      // PAGE DISPLAY TRACKING *****
+        var Feature = 'cart';
+        var Domain="www.lottoland.com"        
+        var event_properties = {
+        'Domain': Domain,
+        'Feature': Feature,
+        'Display Type': 'pageLoad',
+        'Container': '',    
+        'Category': '',    
+        'Id':'cart',
+        'Status': Status,
+        'Genre': 'lottery',    
+            
+        };
+        amplitude.track('display', event_properties);
+    }
      
 </script>
 </head>
