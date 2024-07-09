@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cashier v1.13</title>
+    <title>Cashier v1.14</title>
     <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -58,8 +58,77 @@
         </div>
 </div>
 
+<hr>
+    <div class="payment-method" onclick="togglePaymentDetails('visa')">
+    <div>
+        <img src="https://via.placeholder.com/40?text=V" alt="Visa">
+        <span>Pay with Visa debit/credit</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="visa">
+    <input type="text" placeholder="Card Number">
+    <input type="text" placeholder="Expiry Date">
+    <input type="text" placeholder="CVV">
+</div>
 
-    
+<div class="payment-method" onclick="togglePaymentDetails('mastercard')">
+    <div>
+        <img src="https://via.placeholder.com/40?text=M" alt="MasterCard">
+        <span>Pay with MasterCard</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="mastercard">
+    <input type="text" placeholder="Card Number">
+    <input type="text" placeholder="Expiry Date">
+    <input type="text" placeholder="CVV">
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('neteller')">
+    <div>
+        <img src="https://via.placeholder.com/40?text=N" alt="Neteller">
+        <span>Pay with Neteller</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="neteller">
+    <input type="text" placeholder="Account Number">
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('skrill')">
+    <div>
+        <img src="https://via.placeholder.com/40?text=S" alt="Skrill">
+        <span>Pay with Skrill</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="skrill">
+    <input type="text" placeholder="Email Address">
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('paysafecard')">
+    <div>
+        <img src="https://via.placeholder.com/40?text=P" alt="Paysafe">
+        <span>Pay with Paysafecard</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="paysafecard">
+    <input type="text" placeholder="PIN">
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('paypal')">
+    <div>
+        <img src="https://via.placeholder.com/40?text=PP" alt="Paypal">
+        <span>Pay with PayPal</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="paypal">
+    <input type="text" placeholder="PayPal Email">
+</div>
+
 
 
 <script src="/lottoland/global-scripts.js"></script>
