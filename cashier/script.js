@@ -31,3 +31,26 @@ function validateCode() {
                 document.getElementById('notification').style.display = 'flex';
             }
         }
+
+
+ function togglePaymentDetails(method) {
+        const details = document.querySelectorAll('.payment-details');
+        const arrows = document.querySelectorAll('.payment-method .arrow');
+        
+        details.forEach(detail => {
+            if (detail.id === method) {
+                detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+            } else {
+                detail.style.display = 'none';
+            }
+        });
+
+        arrows.forEach(arrow => {
+            const parent = arrow.parentNode.parentNode;
+            if (parent.querySelector('.payment-details').id === method) {
+                arrow.classList.toggle('open');
+            } else {
+                arrow.classList.remove('open');
+            }
+        });
+    }
