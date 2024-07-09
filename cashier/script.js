@@ -62,6 +62,6 @@ function deposit(method){
       alert(method);      
 }
 
-function continue(method){
+function payContinue(method){
       alert(method);      
 }
