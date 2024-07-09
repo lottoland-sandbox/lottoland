@@ -68,11 +68,11 @@ function payContinue(method){
 
 
 function showPaymentInstruments() {
-            document.getElementById('showPaymentInstruments').style.display = 'block';
-            document.getElementById('showPaymentMethods').style.display = 'none';
+            document.getElementById('instruments').style.display = 'block';
+            document.getElementById('payment-methods').style.display = 'none';
         }
 
 function showPaymentMethods() {
-            document.getElementById('showPaymentInstruments').style.display = 'none';
-            document.getElementById('showPaymentMethods').style.display = 'flex';
+            document.getElementById('instruments').style.display = 'none';
+            document.getElementById('payment-methods').style.display = 'flex';
         }
