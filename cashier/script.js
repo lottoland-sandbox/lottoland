@@ -10,11 +10,11 @@ function validateCode() {
         }
 
  function showPromoContainer() {
-            document.getElementById('promoContainer').style.display = 'block';
+            document.getElementById('promo-container').style.display = 'block';
         }
 
         function hidePromoContainer() {
-            document.getElementById('promoContainer').style.display = 'none';
+            document.getElementById('promo-container').style.display = 'none';
         }
 
  function resetForm() {
