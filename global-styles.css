@@ -19,6 +19,25 @@ body {
     margin: 0 auto;
 }
 
+ .menu-bar {
+            display: flex;
+            background-color: yellow;
+            justify-content: center;
+            padding: 10px 0;
+        }
+.menu-bar a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+.menu-bar a:hover {
+            background-color: green;
+        }
+
+
+
 .progress-bar {
     background-color: #ccc;
     height: 20px;
