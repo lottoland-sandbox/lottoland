@@ -24,11 +24,14 @@ function validateCode() {
             document.getElementById('errorMessage').style.display = 'none';
         }
 
-    // Function to show notification 50% of the time
+    // Function to show notification 30% of the time
         function showNotification() {
             const shouldShow = Math.random() < 0.2;
             if (shouldShow) {
                 document.getElementById('notification').style.display = 'flex';
+
+             //Fire Impression trigger for verification notification
+                        
             }
         }
 
