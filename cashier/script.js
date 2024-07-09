@@ -70,9 +70,13 @@ function payContinue(method){
 function showPaymentInstruments() {
             document.getElementById('instruments').style.display = 'block';
             document.getElementById('payment-methods').style.display = 'none';
+            document.getElementById('addMethod').style.display = 'block';
+            document.getElementById('useStored').style.display = 'none';
         }
 
 function showPaymentMethods() {
             document.getElementById('instruments').style.display = 'none';
             document.getElementById('payment-methods').style.display = 'block';
+            document.getElementById('addMethod').style.display = 'none';
+            document.getElementById('useStored').style.display = 'block';
         }
