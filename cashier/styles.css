@@ -5,6 +5,35 @@
             padding: 10px 0;
         }
 
+
+.quick-buttons-container {
+}
+
+   .quick-buttons-container .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .quick-buttons-container .buttons a {
+            text-decoration: none;
+            color: yellow;
+            font-weight: bold;
+        }
+        .quick-buttons-container .buttons button {
+            padding: 10px 20px;
+            border: 2px solid green;
+            border-radius: 20px;
+            background-color: white;
+            color: green;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .quick-buttons-container .buttons button:hover {
+            background-color: green;
+            color: white;
+        }
+
 .promo-container {
             max-width: 400px;
             margin: 0 auto;
