@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cashier v1.15</title>
+    <title>Cashier v1.16</title>
     <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -66,8 +66,40 @@
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="visa">
+    <input type="text" placeholder="Name">
     <input type="text" placeholder="Card Number">
-    <input type="text" placeholder="Expiry Date">
+     <div class="expiry-date">
+        <select id="expiryMonth">
+            <option value="" disabled selected>Month</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select id="expiryYear">
+            <option value="" disabled selected>Year</option>
+            <!-- Generate years dynamically for the next 20 years -->
+            <script>
+                const yearSelect = document.getElementById('expiryYear');
+                const currentYear = new Date().getFullYear();
+                for (let i = 0; i < 20; i++) {
+                    const year = currentYear + i;
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    yearSelect.appendChild(option);
+                }
+            </script>
+        </select>
+    </div>
     <input type="text" placeholder="CVV">
 </div>
 
@@ -78,6 +110,7 @@
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="mastercard">
+     <input type="text" placeholder="Name">
     <input type="text" placeholder="Card Number">
     <input type="text" placeholder="Expiry Date">
     <input type="text" placeholder="CVV">
