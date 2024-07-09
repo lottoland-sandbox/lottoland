@@ -13,3 +13,11 @@ function validateCode() {
             document.getElementById('promoCode').value = '';
             document.getElementById('errorMessage').style.display = 'none';
         }
+
+    // Function to show notification 50% of the time
+        function showNotification() {
+            const shouldShow = Math.random() < 0.5;
+            if (shouldShow) {
+                document.getElementById('notification').style.display = 'flex';
+            }
+        }
