@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cashier - overlay - v1.0</title>
+    <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<!-- LOGO -->    
+<div class="header">
+    <img class="logo" src="/lottoland/logo-lotto.png" alt="Lottoland Logo">
+    <h1>CASHIER</h1>
+</div>
+
+
+<hr>
+
+<div id="step1" class="step1">  
+<!-- BACK BUTTON -->    
+    <a href="#" onclick="window.location.href = 'entrypoints.html'" >Back</a>
+</br>
+
+    
+<!-- VERIFY WARNING - Shows only some of the time -->    
+     <div id="notification" class="notification">
+        <img src="warning.png" alt="Warning Icon">
+        <p>It is important you verify your account</p>
+        <a href="#">Upload documents now</a>
+    </div>
+<hr>    
+    <p>How much would you like to add?</p>
+<!-- QUICK ADD BUTTONS -->    
+<div class="quick-buttons-container">    
+    <div class="buttons">
+        <button >£10</button>
+        <button >£20</button>
+        <button >£50</button>
+    </div>
+</div>
+    
+<!-- CUSTOM AMMOUNT INPUT -->      
+</br>
+    <div class="amount-container">
+    <input type="number" id="customAmount" placeholder="Custom Amount">
+    </div>
+</br>
+<hr>
+<!-- PROMO CODE LINK -->
+    <div id="promo-link">
+ <a href="#" onclick="showPromoContainer()">Add promo code</a>
+</br>
+    </div>
+
+<!-- PROMO CODE CONTAINER -->
+<div id="promo-container" class="promo-container">
+        <h1>Enter discount or promotion code</h1>
+        <input type="text" id="promoCode" placeholder="Enter code">
+        <div id="errorMessage" class="error" style="display: none;">Oops! The code you have entered is not valid. Please check it and try again.</div>
+        <div class="buttons">
+            <a href="#" onclick="resetForm(); hidePromoContainer() ">Cancel</a>
+            <button onclick="validateCode()">REDEEM</button>
+        </div>
+</div>
+
+</div>
+<div id="step2" class="step2">  
+  
+<hr>
+<div id="payment-methods" class="payment-methods">
+    <div class="payment-method" onclick="togglePaymentDetails('visa')">
+    <div>
+        <span>Pay with Visa debit/credit</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="visa">
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Card Number">
+     <div class="expiry-date">
+        <select id="expiryMonth">
+            <option value="" disabled selected>Month</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select id="expiryYear">
+            <option value="" disabled selected>Year</option>
+            <!-- Generate years dynamically for the next 20 years -->
+            <script>
+                const yearSelect = document.getElementById('expiryYear');
+                const currentYear = new Date().getFullYear();
+                for (let i = 0; i < 20; i++) {
+                    const year = currentYear + i;
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    yearSelect.appendChild(option);
+                }
+            </script>
+        </select>
+         
+    </div>
+    <input type="text" placeholder="CVV">
+      <div class="buttons">
+            <button onclick="deposit('visa')">DEPOSIT</button>
+        </div>
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('mastercard')">
+    <div>
+        <span>Pay with MasterCard</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="mastercard">
+     <input type="text" placeholder="Name">
+    <input type="text" placeholder="Card Number">
+     <div class="expiry-date">
+        <select id="expiryMonth">
+            <option value="" disabled selected>Month</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select id="expiryYear">
+            <option value="" disabled selected>Year</option>
+            <!-- Generate years dynamically for the next 20 years -->
+            <script>
+                const yearSelectMC = document.getElementById('expiryYear');
+                const currentYearMC = new Date().getFullYear();
+                for (let i = 0; i < 20; i++) {
+                    const yearMC = currentYearMC + i;
+                    const optionMC = document.createElement('option');
+                    optionMC.value = yearMC;
+                    optionMC.textContent = yearMC;
+                    yearSelectMC.appendChild(optionMC);
+                }
+            </script>
+        </select>
+         
+    </div>
+    <input type="text" placeholder="CVV">
+     <div class="buttons">
+            <button onclick="deposit('mastercard')">DEPOSIT</button>
+        </div>
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('neteller')">
+    <div>
+        <span>Pay with Neteller</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="neteller">
+    <input type="text" placeholder="Account Number">
+     <div class="buttons">
+            <button onclick="continue('neteller')">CONTINUE</button>
+        </div>
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('skrill')">
+    <div>
+        <span>Pay with Skrill</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="skrill">
+    <input type="text" placeholder="Email Address">
+     <div class="buttons">
+            <button onclick="payContinue('skirll')">CONTINUE</button>
+        </div>
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('paysafecard')">
+    <div>
+        <span>Pay with Paysafecard</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="paysafecard">
+    <input type="text" placeholder="PIN">
+     <div class="buttons">
+            <button onclick="payContinue('paysafecard')">CONTINUE</button>
+        </div>
+</div>
+
+<div class="payment-method" onclick="togglePaymentDetails('paypal')">
+    <div>
+        <span>Pay with PayPal</span>
+    </div>
+    <div class="arrow">&#9660;</div>
+</div>
+<div class="payment-details" id="paypal">
+    <input type="text" placeholder="PayPal Email">
+     <div class="buttons">
+            <button onclick="payContinue('paypal')">CONTINUE</button>
+        </div>
+</div>
+
+</div>
+
+<div id="instruments" class="instruments">
+    <div id="instrument-1" class='instrument'>
+        <div class="name">Joe Bloggs</div>
+        <div class="masked-card">Mastercard **** 1234</div>
+        <div class="expiry-date">12/24</div>
+        <button class="deposit-button">DEPOSIT</button>
+    </div>
+     <div id="instrument-2" class='instrument'>
+        <div class="name">Joe Bloggs</div>
+        <div class="masked-card">Visa **** 4321</div>
+        <div class="expiry-date">01/27</div>
+        <button class="deposit-button">DEPOSIT</button>
+    </div>
+</div>    
+    
+
+<a href="#"  id="addMethod" onclick="showPaymentMethods()">Add new payment method</a> </br>  
+<a href="#" id="useStored" onclick="showPaymentInstruments()">Use stored payment method</a>  </br>
+</br>
+    
+<a href="#">Set new deposit limit</a></br>
+    
+</div>
+  
+<script src="/lottoland/global-scripts.js"></script>
+<script src="script.js"></script>
+    <script>
+        window.onload = showNotification;
+         document.getElementById('useStored').style.display = 'none';
+    </script>
+</body>
+</html>
