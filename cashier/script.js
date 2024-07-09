@@ -16,7 +16,7 @@ function validateCode() {
 
     // Function to show notification 50% of the time
         function showNotification() {
-            const shouldShow = Math.random() < 0.5;
+            const shouldShow = Math.random() < 0.2;
             if (shouldShow) {
                 document.getElementById('notification').style.display = 'flex';
             }
