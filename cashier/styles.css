@@ -9,30 +9,37 @@
 .quick-buttons-container {
 }
 
-   .quick-buttons-container .buttons {
-            display: flex;
-            justify-content: space-between;
-            align-items: left;
-        }
-        .quick-buttons-container .buttons a {
-            text-decoration: none;
-            color: yellow;
-            font-weight: bold;
-        }
-        .quick-buttons-container .buttons button {
-            padding: 10px 20px;
-            border: 2px solid green;
-            border-radius: 20px;
-            background-color: white;
-            color: green;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .quick-buttons-container .buttons button:hover {
-            background-color: yellow;
-            color: black;
-        }
+
+.quick-buttons-container .buttons {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Center items vertically */
+}
+
+.quick-buttons-container .buttons a {
+    text-decoration: none;
+    color: yellow;
+    font-weight: bold;
+    margin-right: 10px; /* Add margin for spacing between links and buttons */
+}
+
+.quick-buttons-container .buttons button {
+    padding: 10px 20px;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: white;
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Add margin for spacing between buttons */
+}
+
+.quick-buttons-container .buttons button:hover {
+    background-color: darkgoldenrod; /* Change to dark yellow */
+    color: black;
+}
+
 
 .promo-container {
             max-width: 400px;
