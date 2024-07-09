@@ -65,3 +65,14 @@ function deposit(method){
 function payContinue(method){
       alert(method);      
 }
+
+
+function showPaymentInstruments() {
+            document.getElementById('showPaymentInstruments').style.display = 'block';
+            document.getElementById('showPaymentMethods').style.display = 'none';
+        }
+
+function showPaymentMethods() {
+            document.getElementById('showPaymentInstruments').style.display = 'none';
+            document.getElementById('showPaymentMethods').style.display = 'flex';
+        }
