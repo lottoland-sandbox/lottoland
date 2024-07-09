@@ -92,7 +92,7 @@ a {
 
 
 .promo-container {
-       
+       display: none;
         }
         .promo-container h1 {
             font-size: 18px;
