@@ -21,14 +21,15 @@
 
 <!-- PROMO CODE LINK -->
 <!-- PROMO CODE CONTAINER -->
-
-  
-    <div class="menu-bar">
-        <button>Header</button>
-        <button>Landing Page</button>
-        <button>Game</button>
-        
-    </div>
+<div class="promo-container">
+        <h1>Enter discount or promotion code</h1>
+        <input type="text" id="promoCode" placeholder="Enter code">
+        <div id="errorMessage" class="error" style="display: none;">Oops! The code you have entered is not valid. Please check it and try again.</div>
+        <div class="buttons">
+            <a href="#" onclick="resetForm()">Cancel</a>
+            <button onclick="validateCode()">REDEEM</button>
+        </div>
+</div>
 
 
     
