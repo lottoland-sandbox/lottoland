@@ -9,6 +9,14 @@ function validateCode() {
             }
         }
 
+ function showPromoContainer() {
+            document.getElementById('promoContainer').style.display = 'block';
+        }
+
+        function hidePromoContainer() {
+            document.getElementById('promoContainer').style.display = 'none';
+        }
+
  function resetForm() {
             document.getElementById('promoCode').value = '';
             document.getElementById('errorMessage').style.display = 'none';
