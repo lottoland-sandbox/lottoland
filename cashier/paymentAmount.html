@@ -42,7 +42,7 @@
 </br>
 
 <!-- PROMO CODE LINK -->
- <a href="#" >Add promo code</a>
+ <a href="#" onclick="showPromoContainer()>Add promo code</a>
 </br>
 
 <!-- PROMO CODE CONTAINER -->
@@ -51,7 +51,7 @@
         <input type="text" id="promoCode" placeholder="Enter code">
         <div id="errorMessage" class="error" style="display: none;">Oops! The code you have entered is not valid. Please check it and try again.</div>
         <div class="buttons">
-            <a href="#" onclick="resetForm()">Cancel</a>
+            <a href="#" onclick="resetForm(); hidePromoContainer() ">Cancel</a>
             <button onclick="validateCode()">REDEEM</button>
         </div>
 </div>
