@@ -11,10 +11,12 @@ function validateCode() {
 
  function showPromoContainer() {
             document.getElementById('promo-container').style.display = 'block';
+            document.getElementById('promo-link').style.display = 'none';
         }
 
         function hidePromoContainer() {
             document.getElementById('promo-container').style.display = 'none';
+            document.getElementById('promo-link').style.display = 'flex';
         }
 
  function resetForm() {
