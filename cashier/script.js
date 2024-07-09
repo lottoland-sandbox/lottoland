@@ -57,3 +57,7 @@ function validateCode() {
             }
         });
     }
+
+function deposit(method){
+      alert(method);      
+}
