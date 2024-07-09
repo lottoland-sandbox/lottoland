@@ -141,6 +141,9 @@ a {
             background-color: green;
             color: white;
         }
+.payment-methods {
+ display: none;
+}
 
   .payment-method {
             border: 1px solid #ccc;
