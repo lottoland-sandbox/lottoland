@@ -61,3 +61,7 @@ function validateCode() {
 function deposit(method){
       alert(method);      
 }
+
+function continue(method){
+      alert(method);      
+}
