@@ -62,6 +62,14 @@
 
 <script src="/lottoland/global-scripts.js"></script>
 <script src="script.js"></script>
-    <script>window.onload = showNotification;</script>
+    <script>
+          function showNotification() {
+            const shouldShow = Math.random() < 0.2;
+            if (shouldShow) {
+                document.getElementById('notification').style.display = 'flex';
+            }
+          }
+        window.onload = showNotification;
+    </script>
 </body>
 </html>
