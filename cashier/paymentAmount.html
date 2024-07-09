@@ -137,14 +137,14 @@
             <option value="" disabled selected>Year</option>
             <!-- Generate years dynamically for the next 20 years -->
             <script>
-                const yearSelect = document.getElementById('expiryYear');
-                const currentYear = new Date().getFullYear();
+                const yearSelectMC = document.getElementById('expiryYear');
+                const currentYearMC = new Date().getFullYear();
                 for (let i = 0; i < 20; i++) {
-                    const year = currentYear + i;
-                    const option = document.createElement('option');
-                    option.value = year;
-                    option.textContent = year;
-                    yearSelect.appendChild(option);
+                    const yearMC = currentYearMC + i;
+                    const optionMC = document.createElement('option');
+                    optionMC.value = yearMC;
+                    optionMC.textContent = yearMC;
+                    yearSelectMC.appendChild(optionMC);
                 }
             </script>
         </select>
