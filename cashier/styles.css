@@ -12,7 +12,7 @@
    .quick-buttons-container .buttons {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: left;
         }
         .quick-buttons-container .buttons a {
             text-decoration: none;
@@ -30,8 +30,8 @@
             transition: background-color 0.3s;
         }
         .quick-buttons-container .buttons button:hover {
-            background-color: green;
-            color: white;
+            background-color: yellow;
+            color: black;
         }
 
 .promo-container {
