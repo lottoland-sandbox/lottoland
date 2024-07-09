@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cashier v1.18</title>
+    <title>Cashier v1.19</title>
     <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -163,6 +163,9 @@
 </div>
 <div class="payment-details" id="neteller">
     <input type="text" placeholder="Account Number">
+     <div class="buttons">
+            <button onclick="continue('neteller')">CONTINUE</button>
+        </div>
 </div>
 
 <div class="payment-method" onclick="togglePaymentDetails('skrill')">
@@ -173,6 +176,9 @@
 </div>
 <div class="payment-details" id="skrill">
     <input type="text" placeholder="Email Address">
+     <div class="buttons">
+            <button onclick="continue('skirll')">CONTINUE</button>
+        </div>
 </div>
 
 <div class="payment-method" onclick="togglePaymentDetails('paysafecard')">
@@ -183,6 +189,9 @@
 </div>
 <div class="payment-details" id="paysafecard">
     <input type="text" placeholder="PIN">
+     <div class="buttons">
+            <button onclick="continue('paysafecard')">CONTINUE</button>
+        </div>
 </div>
 
 <div class="payment-method" onclick="togglePaymentDetails('paypal')">
@@ -193,6 +202,9 @@
 </div>
 <div class="payment-details" id="paypal">
     <input type="text" placeholder="PayPal Email">
+     <div class="buttons">
+            <button onclick="continue('paypal')">CONTINUE</button>
+        </div>
 </div>
 
 
