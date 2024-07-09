@@ -74,5 +74,5 @@ function showPaymentInstruments() {
 
 function showPaymentMethods() {
             document.getElementById('instruments').style.display = 'none';
-            document.getElementById('payment-methods').style.display = 'flex';
+            document.getElementById('payment-methods').style.display = 'block';
         }
