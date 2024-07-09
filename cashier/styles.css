@@ -90,6 +90,9 @@ a {
     color: black;
 }
 
+.promo-link {
+       display: flex;
+        }
 
 .promo-container {
        display: none;
