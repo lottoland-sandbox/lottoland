@@ -81,6 +81,19 @@ function validateCode() {
         details.forEach(detail => {
             if (detail.id === method) {
                 detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+
+            //Fire click to show payment method has been opened
+            var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Container': 'paymentMethod',
+                        'Object': 'link',
+                        'Name': 'method',
+                        'method': method,
+            }
+            amplitude.track('click', payload);   
+
+                        
             } else {
                 detail.style.display = 'none';
             }
