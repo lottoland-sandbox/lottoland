@@ -109,12 +109,12 @@ function validateCode() {
         });
     }
 
-function deposit(method,amount){
+function deposit(method,amount,container){
             //Fire click for deposit button being pressed
             var payload={
                         'Feature': Feature,
                         'Domain': Domain,
-                        'Container': 'paymentInstrument',
+                        'Container': container,
                         'Object': 'button',
                         'Name': 'deposit',
                         'Instrument': method,
