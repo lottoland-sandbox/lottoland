@@ -9,17 +9,28 @@ function trackOnFieldFocus(event) {
         var trackContainer = target.getAttribute('data-track-container') || '';
         var trackObject = target.getAttribute('data-track-object') || '';
         var trackName = target.getAttribute('data-track-name');
-        var trackValue = target.getAttribute('data-track-value');
+        var trackValue = target.getAttribute('data-track-value') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
         var trackSubcategory = target.getAttribute('data-track-subcategory') || '';
+        var trackAmount = target.getAttribute('data-track-amount') || '';
+        var trackInstrument = target.getAttribute('data-track-instrument') || '';
+        var trackGenre = target.getAttribute('data-track-genre') || '';
+        var trackProduct = target.getAttribute('data-track-product') || '';
+        var trackDescription = target.getAttribute('data-track-description') || '';
 
         // Construct event properties object
         var event_properties = {
-            Name: trackName,
+             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
+            Value: trackValue,
             Category: trackCategory,
-            Value: 'firstfocusin',
+            Subcategory: trackSubcategory,
+            Amount: trackAmount,
+            Instrument: trackInstrument,
+            Genre: trackGenre,
+            Product: trackProduct,
+            Description: trackDescription,
         };
 
         // Fire amplitude tracking with 'focus' event type
@@ -45,9 +56,11 @@ function trackLinkClick(event) {
         var trackContainer = target.getAttribute('data-track-container') || '';
         var trackObject = target.getAttribute('data-track-object') || '';
         var trackName = target.getAttribute('data-track-name');
-        var trackValue = target.getAttribute('data-track-value');
+        var trackValue = target.getAttribute('data-track-value') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
         var trackSubcategory = target.getAttribute('data-track-subcategory') || '';
+        var trackAmount = target.getAttribute('data-track-amount') || '';
+        var trackInstrument = target.getAttribute('data-track-instrument') || '';
         var trackGenre = target.getAttribute('data-track-genre') || '';
         var trackProduct = target.getAttribute('data-track-product') || '';
         var trackDescription = target.getAttribute('data-track-description') || '';
@@ -57,8 +70,11 @@ function trackLinkClick(event) {
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
+            Value: trackValue,
             Category: trackCategory,
             Subcategory: trackSubcategory,
+            Amount: trackAmount,
+            Instrument: trackInstrument,
             Genre: trackGenre,
             Product: trackProduct,
             Description: trackDescription,
