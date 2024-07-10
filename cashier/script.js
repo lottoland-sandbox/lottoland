@@ -80,3 +80,9 @@ function showPaymentMethods() {
             document.getElementById('addMethod').style.display = 'none';
             document.getElementById('useStored').style.display = 'block';
         }
+
+function showStep2() {
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+}
+
