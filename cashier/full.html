@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cashier - Full - v1.41</title>
+    <title>Cashier - Full - v1.42</title>
     <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript">
@@ -49,16 +49,16 @@ amplitude.track('display', payload);
 <!-- QUICK ADD BUTTONS -->    
 <div class="quick-buttons-container">    
     <div class="buttons">
-        <button >£10</button>
-        <button >£20</button>
-        <button >£50</button>
+        <button  data-track-container="paymentAmount" data-track-object="button" data-track-name="quickButton" data-track-value="£10">£10</button>
+        <button  data-track-container="paymentAmount" data-track-object="button" data-track-name="quickButton" data-track-value="£20">£20</button>
+        <button  data-track-container="paymentAmount" data-track-object="button" data-track-name="quickButton" data-track-value="£50">£50</button>
     </div>
 </div>
     
 <!-- CUSTOM AMMOUNT INPUT -->      
 </br>
     <div class="amount-container">
-    <input type="number" id="customAmount" placeholder="Custom Amount">
+    <input type="number" id="customAmount" placeholder="Custom Amount" data-track-container="paymentAmount" data-track-object="field" data-track-name="amount"   >
     </div>
 </br>
 <hr>
