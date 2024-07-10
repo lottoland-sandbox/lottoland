@@ -73,11 +73,12 @@ amplitude.track('display', payload);
         <input type="text" id="promoCode" placeholder="Enter code" data-track-container="promoCode" data-track-object="field" data-track-name="code" >
         <div id="errorMessage" class="error" style="display: none;">Oops! The code you have entered is not valid. Please check it and try again.</div>
         <div class="buttons">
-            <a href="#" onclick="resetForm(); hidePromoContainer() " ata-track-container="promoCode" data-track-object="link" data-track-name="cancel"  >Cancel</a>
+            <a href="#" onclick="resetForm(); hidePromoContainer() " data-track-container="promoCode" data-track-object="link" data-track-name="cancel"  >Cancel</a>
             <button onclick="validateCode()"  >REDEEM</button>
         </div>
 </div>
 
+<!-- PAYMENT METHODS CONTAINER -->    
 <hr>
 <div id="payment-methods" class="payment-methods">
     <div class="payment-method" onclick="togglePaymentDetails('visa')">
