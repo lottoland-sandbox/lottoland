@@ -154,11 +154,11 @@ amplitude.track('display', payload);
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        <select id="expiryYear" data-track-container="paymentDetails" data-track-object="field" data-track-name="expiryYear" data-track-instrument="mastercard">
+        <select id="expiryYearMC" data-track-container="paymentDetails" data-track-object="field" data-track-name="expiryYear" data-track-instrument="mastercard">
             <option value="" disabled selected>Year</option>
             <!-- Generate years dynamically for the next 20 years -->
             <script>
-                const yearSelectMC = document.getElementById('expiryYear');
+                const yearSelectMC = document.getElementById('expiryYearMC');
                 const currentYearMC = new Date().getFullYear();
                 for (let i = 0; i < 20; i++) {
                     const yearMC = currentYearMC + i;
