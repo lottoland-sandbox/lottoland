@@ -40,6 +40,13 @@ function validateCode() {
                 document.getElementById('notification').style.display = 'flex';
 
              //Fire Impression trigger for verification notification
+            var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Container': 'verificationRequest',
+                        'Display Type': 'impression',
+            }
+            amplitude.track('display', payload);      
                         
             }
         }
