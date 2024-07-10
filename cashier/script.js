@@ -12,7 +12,7 @@ function validateCode() {
                         'Value': code,
                         'Outcome': 'success',    
                 }
-                amplitude.track('display', payload);              
+                amplitude.track('click', payload);              
                 alert('Code redeemed successfully!');
 
                         
@@ -27,7 +27,7 @@ function validateCode() {
                         'Value': code,
                         'Outcome': 'failure',    
                 }
-                amplitude.track('display', payload); 
+                amplitude.track('click', payload); 
             }
         }
 
