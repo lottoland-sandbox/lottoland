@@ -12,6 +12,15 @@ function validateCode() {
  function showPromoContainer() {
             document.getElementById('promo-container').style.display = 'block';
             document.getElementById('promo-link').style.display = 'none';
+             
+            // ** Send an impression saying the promoCode section has been displayed
+            var payload={
+                        'Domain': Domain,
+                        'Feature': Feature,
+                        'Container': 'promoCode',
+                        'Display Type': 'impression',
+            }
+            amplitude.track('display', payload);      
         }
 
         function hidePromoContainer() {
