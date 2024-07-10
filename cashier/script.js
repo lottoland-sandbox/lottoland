@@ -133,15 +133,15 @@ function callRandomDepositOutcome(method,amount) {
 
 
 function depositSuccess(method,amount){
-         alert('Deposit Sucessful - ${method} - ${amount}');   
+         alert('Deposit Sucessful - '+method+' - '+amount);   
 }
 
 function depositFailure(method,amount){
-          alert('Deposit Failure - ${method} - ${amount}');   
+          alert('Deposit Failure - '+method+' - '+amount);   
 }
 
 function depositPending(method,amount){
-            alert('Deposit Pending - ${method} - ${amount}');   
+            alert('Deposit Pending - '+method+' - '+amount);   
 }
 
 
