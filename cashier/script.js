@@ -89,7 +89,7 @@ function validateCode() {
                         'Container': 'paymentMethod',
                         'Object': 'link',
                         'Name': 'showMethod',
-                        'method': method,
+                        'Instrument': method,
             }
             amplitude.track('click', payload);   
 
@@ -109,8 +109,21 @@ function validateCode() {
         });
     }
 
-function deposit(method){
-      alert(method);      
+function deposit(method,amount){
+            //Fire click for deposit button being pressed
+            var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Container': 'paymentInstrument',
+                        'Object': 'button',
+                        'Name': 'deposit',
+                        'Instrument': method,
+                        'Amount': amount,     
+            }
+            amplitude.track('click', payload);   
+            
+            alert(method);   
+            
 }
 
 function payContinue(method){
