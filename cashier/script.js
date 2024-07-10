@@ -3,9 +3,31 @@ function validateCode() {
             const errorMessage = document.getElementById('errorMessage');
             if (code.toUpperCase() === 'MIKE') {
                 errorMessage.style.display = 'none';
+                var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Container': 'promoCode',
+                        'Object': 'button',
+                        'Name': 'redeem',
+                        'Value': code,
+                        'Outcome': 'success',    
+                }
+                amplitude.track('display', payload);              
                 alert('Code redeemed successfully!');
+
+                        
             } else {
                 errorMessage.style.display = 'block';
+                var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Container': 'promoCode',
+                        'Object': 'button',
+                        'Name': 'redeem',
+                        'Value': code,
+                        'Outcome': 'failure',    
+                }
+                amplitude.track('display', payload); 
             }
         }
 
