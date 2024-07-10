@@ -121,10 +121,31 @@ function deposit(method,amount){
                         'Amount': amount,     
             }
             amplitude.track('click', payload);   
-            
-            alert(method);   
+            callRandomDepositOutcome(method,amount);  
             
 }
+
+function callRandomDepositOutcome(method,amount) {
+    const functions = [depositSuccess, depositFailure, depositPending];
+    const randomIndex = Math.floor(Math.random() * functions.length);
+    functions[randomIndex](method, amount);
+}
+
+
+function depositSuccess(method,amount){
+         alert('Deposit Sucessful - ${method} - ${amount}');   
+}
+
+function depositFailure(method,amount){
+          alert('Deposit Failure - ${method} - ${amount}');   
+}
+
+function depositPending(method,amount){
+            alert('Deposit Pending - ${method} - ${amount}');   
+}
+
+
+
 
 function payContinue(method){
       alert(method);      
