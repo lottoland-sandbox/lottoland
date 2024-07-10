@@ -36,6 +36,7 @@ function trackOnFieldFocus(event) {
         // Fire amplitude tracking with 'focus' event type
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain; 
+         event_properties['Value'] = 'firstfocusin; 
         amplitude.track('click', event_properties);
     }
 }
