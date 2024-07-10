@@ -15,7 +15,8 @@ function validateCode() {
              
             // ** Send an impression saying the promoCode section has been displayed
             var payload={
-                      
+                        'Feature': Feature,
+                        'Domain': Domain,
                         'Container': 'promoCode',
                         'Display Type': 'impression',
             }
