@@ -88,6 +88,8 @@ function trackButtonClick(event) {
         var trackValue = target.getAttribute('data-track-value') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
         var trackSubcategory = target.getAttribute('data-track-subcategory') || '';
+        var trackAmount = target.getAttribute('data-track-amount') || '';
+        var trackInstrument = target.getAttribute('data-track-instrument') || '';
         var trackGenre = target.getAttribute('data-track-genre') || '';
         var trackProduct = target.getAttribute('data-track-product') || '';
         var trackDescription = target.getAttribute('data-track-description') || '';
@@ -100,6 +102,8 @@ function trackButtonClick(event) {
             Value: trackValue,
             Category: trackCategory,
             Subcategory: trackSubcategory,
+            Amount: trackAmount,
+            Instrument: trackInstrument,
             Genre: trackGenre,
             Product: trackProduct,
             Description: trackDescription,
