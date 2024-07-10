@@ -88,7 +88,7 @@ function validateCode() {
                         'Domain': Domain,
                         'Container': 'paymentMethod',
                         'Object': 'link',
-                        'Name': 'method',
+                        'Name': 'showMethod',
                         'method': method,
             }
             amplitude.track('click', payload);   
