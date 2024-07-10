@@ -43,7 +43,7 @@ function validateCode() {
             var payload={
                         'Feature': Feature,
                         'Domain': Domain,
-                        'Container': 'verificationRequest',
+                        'Container': 'verify',
                         'Display Type': 'impression',
             }
             amplitude.track('display', payload);      
