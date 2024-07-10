@@ -33,7 +33,6 @@ amplitude.track('display', payload);
 
 <hr>
 <!-- BACK BUTTON -->  
-    
     <a href="#" onclick="window.location.href = 'entrypoints.html'" >Back</a>
 </br>
 
@@ -55,7 +54,7 @@ amplitude.track('display', payload);
     </div>
 </div>
     
-<!-- CUSTOM AMMOUNT INPUT -->      
+<!-- CUSTOM AMOUNT INPUT -->      
 </br>
     <div class="amount-container">
     <input type="number" id="customAmount" placeholder="Custom Amount" data-track-container="paymentAmount" data-track-object="field" data-track-name="amount"   >
@@ -64,18 +63,18 @@ amplitude.track('display', payload);
 <hr>
 <!-- PROMO CODE LINK -->
     <div id="promo-link">
- <a href="#" onclick="showPromoContainer()">Add promo code</a>
+ <a href="#" onclick="showPromoContainer()" data-track-container="promoCode" data-track-object="link" data-track-name="addPromo"  >Add promo code</a>
 </br>
     </div>
 
 <!-- PROMO CODE CONTAINER -->
 <div id="promo-container" class="promo-container">
         <h1>Enter discount or promotion code</h1>
-        <input type="text" id="promoCode" placeholder="Enter code">
+        <input type="text" id="promoCode" placeholder="Enter code" data-track-container="promoCode" data-track-object="field" data-track-name="code" >
         <div id="errorMessage" class="error" style="display: none;">Oops! The code you have entered is not valid. Please check it and try again.</div>
         <div class="buttons">
-            <a href="#" onclick="resetForm(); hidePromoContainer() ">Cancel</a>
-            <button onclick="validateCode()">REDEEM</button>
+            <a href="#" onclick="resetForm(); hidePromoContainer() " ata-track-container="promoCode" data-track-object="link" data-track-name="cancel"  >Cancel</a>
+            <button onclick="validateCode()"  >REDEEM</button>
         </div>
 </div>
 
