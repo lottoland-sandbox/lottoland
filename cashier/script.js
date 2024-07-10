@@ -133,14 +133,51 @@ function callRandomDepositOutcome(method,amount) {
 
 
 function depositSuccess(method,amount){
+         var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Outcome': 'success',
+                        'Instrument': method,
+                        'Amount': amount,     
+            }
+            amplitude.track('outcome', payload);       
          alert('Deposit Sucessful - '+method+' - '+amount);   
 }
 
 function depositFailure(method,amount){
-          alert('Deposit Failure - '+method+' - '+amount);   
+            // Array of error descriptions
+            var errorDescriptions = [
+                "CVV is invalid",
+                "Failure 3DS",
+                "Card Expired",
+                "System not responding",        
+            ];
+            var randomIndex = Math.floor(Math.random() * errorDescriptions.length);
+            var randomError= errorDescriptions[randomIndex];
+             var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Outcome': 'failure',
+                        'Instrument': method,
+                        'Amount': amount,
+                        'Error': randomError,
+            }
+            amplitude.track('outcome', payload);      
+          alert('Deposit Failure - '+method+' - '+amount+' because '+randomError);   
 }
 
+
+
+
 function depositPending(method,amount){
+             var payload={
+                        'Feature': Feature,
+                        'Domain': Domain,
+                        'Outcome': 'pending',
+                        'Instrument': method,
+                        'Amount': amount,     
+            }
+            amplitude.track('outcome', payload);      
             alert('Deposit Pending - '+method+' - '+amount);   
 }
 
