@@ -44,9 +44,9 @@ function trackOnFieldFocus(event) {
 // Attach focus event listener to all form fields with data-track attribute
 document.addEventListener('focusin', function(event) {
     var target = event.target;
-    if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
-        trackOnFieldFocus(event);
-    }
+       if ((target.tagName === 'INPUT' || target.tagName === 'SELECT') && target.hasAttribute('data-track-name')) {
+            trackOnFieldFocus(event);
+        }
 });
 
 
