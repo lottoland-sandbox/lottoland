@@ -58,6 +58,7 @@ function trackLinkClick(event) {
             Container: trackContainer,
             Object: trackObject,
             Category: trackCategory,
+            Subcategory: trackSubcategory,
             Genre: trackGenre,
             Product: trackProduct,
             Description: trackDescription,
@@ -87,17 +88,18 @@ function trackButtonClick(event) {
         var trackValue = target.getAttribute('data-track-value') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
         var trackSubcategory = target.getAttribute('data-track-subcategory') || '';
-    
+        var trackGenre = target.getAttribute('data-track-genre') || '';
+        var trackProduct = target.getAttribute('data-track-product') || '';
+        var trackDescription = target.getAttribute('data-track-description') || '';
 
         // Construct event properties object
         var event_properties = {
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
-            Category: trackCategory,
             Value: trackValue,
-            Campaign: trackCampaign,
-            Offer: trackOffer,
+            Category: trackCategory,
+            Subcategory: trackSubcategory,
             Genre: trackGenre,
             Product: trackProduct,
             Description: trackDescription,
