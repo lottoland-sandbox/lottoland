@@ -37,7 +37,7 @@ function trackOnFieldFocus(event) {
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain;
         event_properties['Value'] = 'firstfocusin';
-        amplitude.track('click', event_properties);
+        amp('click', event_properties);
     }
 }
 
@@ -84,7 +84,7 @@ function trackLinkClick(event) {
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain;
-        amplitude.track('click', event_properties);
+        amp('click', event_properties);
     }
 }
 
@@ -129,7 +129,7 @@ function trackButtonClick(event) {
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain;
-        amplitude.track('click', event_properties);
+        amp('click', event_properties);
     }
 }
 
@@ -140,6 +140,20 @@ buttons.forEach(function(button) {
 });
 
 
+function amp(event,payload){
+    const pathname = window.location.pathname;
+    const pathParts = pathname.split('/');
+    const pageName = pathParts.pop() || 'index.html'; // Default to 'index.html' if no page name
+    const path = pathParts.join('/');
+
+    payload['Title'] = document.title;
+    payload['Path'] = path;
+    payload['Page Name'] = pageName;
+    payload['Query String'] = window.location.search;
+    payload['Actual Domain'] = window.location.hostname;
+    
+    amplitude.track(event, payload);
+}
 
 
  
