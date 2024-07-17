@@ -6,6 +6,7 @@ var user1 = {
     'Player Number': '1234',
     'Player Tier': 'VIP',
     'Balance': '10.23',
+    'Logged In': 'yes',
 };
 
 var user2 = {
@@ -15,6 +16,7 @@ var user2 = {
     'Player Number': '4321',
     'Player Tier': 'NON VIP',
     'Balance': '102.23',
+    'Logged In': 'yes',
 };
 
 var user3 = {
@@ -24,6 +26,7 @@ var user3 = {
     'Player Number': '2222',
     'Player Tier': 'GOLD',
     'Balance': '0.22',
+    'Logged In': 'yes',
 };
 
 var user4 = {
@@ -33,6 +36,7 @@ var user4 = {
     'Player Number': '18882',
     'Player Tier': 'PLATINUM',
     'Balance': '9.11',
+    'Logged In': 'yes',
 };
 
 // Function to select a random payload
@@ -66,9 +70,6 @@ function getRandomPlayer() {
                 "Browser": "Unknown",
                 "Browser Version": "Unknown",
                 "Screen Resolution": `${screen.width}x${screen.height}`,
-                "Title": document.title,
-                "Path": path,
-                "Page Name": pageName,
                 "Referrer": document.referrer,
                 "User Agent": ua,
                 "Language": navigator.language,
@@ -94,8 +95,18 @@ function getRandomPlayer() {
                 "Notification Support": ('Notification' in window).toString(),
                 "Network Type": (navigator.connection && navigator.connection.type) ? navigator.connection.type.toString() : 'Unknown',
                 "Network Download Speed": (navigator.connection && navigator.connection.downlink) ? navigator.connection.downlink + ' Mbps' : 'Unknown',
+                
+                
+                
+                //MOVE TO EVENT
+                "Title": document.title,
+                "Path": path,
+                "Page Name": pageName,
                 "Query String": window.location.search,
-                "Actual Domain": window.location.hostname
+                "Actual Domain": window.location.hostname,
+
+
+                
             };
 
             if (navigator.getBattery) {
