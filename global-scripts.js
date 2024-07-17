@@ -291,7 +291,4 @@ buttons.forEach(function(button) {
             return payload;
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            let userAgentString = navigator.userAgent;
-            parseUserAgent(userAgentString);
-        });
+       
