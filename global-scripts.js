@@ -291,7 +291,10 @@ buttons.forEach(function(button) {
             return payload;
         }
 
-function amp(event,payload){
+function amp(event,eventPayload){
+    let userAgentString = navigator.userAgent;
+    var globalPayload=globalProperties(userAgentString);
+    var payload=mergePayloads(eventPayload,globalPayload);
     amplitude.track(event, payload); 
 }
      
