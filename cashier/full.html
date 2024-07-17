@@ -16,14 +16,16 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
  var Domain="www.lottoland.com"; 
  var Feature = 'cashier';
         
- var userPayload=getRandomPlayer();   
-// SET UP IDENTITY BASE ON RANDOM USER ABOVE        
-var identifyEvent = new amplitude.Identify();
+ var identifyEvent = new amplitude.Identify();
+// SET UP IDENTITY BASE ON RANDOM USER   
+var userPayload=getRandomPlayer();  
 for (var key in userPayload) {
         if (userPayload.hasOwnProperty(key)) {
             identifyEvent.set(key, userPayload[key]);
         }
     }
+// ADD DEVICE INFORMATION
+        
 amplitude.identify(identifyEvent);
         
 
