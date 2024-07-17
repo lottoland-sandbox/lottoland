@@ -258,12 +258,14 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
             var globalPayload=globalProperties(userAgentString);
             var Domain="www.lottoland.com"; 
             var Feature = 'cashier';
-            var payload={
+            var eventPayload={
                 'Domain': Domain,
                 'Feature': Feature,
                 'Id': 'deposit',
                 'Display Type': 'pageLoad',
             };
+
+            var payload=mergePayLoads(eventPayload,globalPayLoad);
             amp('pageLoad',payload);        
         });
       
