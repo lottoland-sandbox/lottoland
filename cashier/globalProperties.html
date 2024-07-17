@@ -59,9 +59,7 @@
                 "Browser": "Unknown",
                 "Browser Version": "Unknown",
                 "Screen Resolution": `${screen.width}x${screen.height}`,
-                "Page Title": document.title,
-                "Path": path,
-                "Page Name": pageName,
+               
                 "Referrer": document.referrer,
                 "User Agent": ua,
                 "Language": navigator.language,
@@ -89,7 +87,11 @@
                 "Network Type": (navigator.connection && navigator.connection.type) ? navigator.connection.type.toString() : 'Unknown',
                 "Network Download Speed": (navigator.connection && navigator.connection.downlink) ? navigator.connection.downlink + ' Mbps' : 'Unknown',
                 "Query String": window.location.search,
-                "Domain": window.location.hostname
+                "Domain": window.location.hostname,
+
+                "Page Title": document.title,
+                "Path": path,
+                "Page Name": pageName,
             };
 
             if (navigator.getBattery) {
