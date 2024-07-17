@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cashier - Full - v1.50</title>
+    <title>Cashier - Full - v1.51</title>
     <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript">
@@ -12,7 +12,8 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
         pageViews: false,
     },
 });
-
+ var Domain="www.lottoland.com"; 
+ var Feature = 'cashier';
 // amplitude.track('display', payload);         
 </script>
 </head>
@@ -254,16 +255,14 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
          document.getElementById('useStored').style.display = 'none';
 
          document.addEventListener('DOMContentLoaded', function() {
-            let userAgentString = navigator.userAgent;
-            var globalPayload=globalProperties(userAgentString);
-            var Domain="www.lottoland.com"; 
-            var Feature = 'cashier';
+            
+           
             var eventPayload={
                 'Domain': Domain,
                 'Feature': Feature,
                 'Id': 'deposit',
             };
-            var payload=mergePayloads(eventPayload,globalPayload);
+
             amp('pageLoad',payload);        
         });
       
