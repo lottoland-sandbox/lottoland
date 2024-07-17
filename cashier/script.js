@@ -3,7 +3,7 @@ function validateCode() {
             const errorMessage = document.getElementById('errorMessage');
             if (code.toUpperCase() === 'MIKE') {
                 errorMessage.style.display = 'none';
-                var payload={
+                var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Container': 'promoCode',
@@ -12,13 +12,15 @@ function validateCode() {
                         'Value': code,
                         'Outcome': 'success',    
                 }
-                amplitude.track('click', payload);              
+                
+                amp('click',eventPayload,userPayload);          
+               // amplitude.track('click', payload);              
                 alert('Code redeemed successfully!');
 
                         
             } else {
                 errorMessage.style.display = 'block';
-                var payload={
+                var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Container': 'promoCode',
@@ -27,7 +29,8 @@ function validateCode() {
                         'Value': code,
                         'Outcome': 'failure',    
                 }
-                amplitude.track('click', payload); 
+                amp('click',eventPayload,userPayload);
+                //amplitude.track('click', payload); 
             }
         }
 
@@ -36,13 +39,14 @@ function validateCode() {
             document.getElementById('promo-link').style.display = 'none';
              
             // ** Send an impression saying the promoCode section has been displayed
-            var payload={
+            var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Container': 'promoCode',
-                        'Display Type': 'impression',
+                        
             }
-            amplitude.track('display', payload);      
+             amp('impression',eventPayload,userPayload);
+           // amplitude.track('display', payload);      
         }
 
         function hidePromoContainer() {
@@ -62,13 +66,14 @@ function validateCode() {
                 document.getElementById('notification').style.display = 'flex';
 
              //Fire Impression trigger for verification notification
-            var payload={
+            var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Container': 'verify',
-                        'Display Type': 'impression',
+                       
             }
-            amplitude.track('display', payload);      
+                        amp('impression',eventPayload,userPayload);
+            //amplitude.track('display', payload);      
                         
             }
         }
@@ -83,7 +88,7 @@ function validateCode() {
                 detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
 
             //Fire click to show payment method has been opened
-            var payload={
+            var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Container': 'paymentMethod',
@@ -91,7 +96,8 @@ function validateCode() {
                         'Name': 'showMethod',
                         'Instrument': method,
             }
-            amplitude.track('click', payload);   
+            amp('click',eventPayload,userPayload);
+           // amplitude.track('click', payload);   
 
                         
             } else {
@@ -111,7 +117,7 @@ function validateCode() {
 
 function deposit(method,amount,container){
             //Fire click for deposit button being pressed
-            var payload={
+            var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Container': container,
@@ -120,7 +126,8 @@ function deposit(method,amount,container){
                         'Instrument': method,
                         'Amount': amount,     
             }
-            amplitude.track('click', payload);   
+             amp('click',eventPayload,userPayload);
+            //amplitude.track('click', payload);   
             callRandomDepositOutcome(method,amount);  
             
 }
@@ -133,14 +140,15 @@ function callRandomDepositOutcome(method,amount) {
 
 
 function depositSuccess(method,amount){
-         var payload={
+         var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Outcome': 'success',
                         'Instrument': method,
                         'Amount': amount,     
             }
-            amplitude.track('outcome', payload);       
+             amp('outcome',eventPayload,userPayload);
+            //amplitude.track('outcome', payload);       
          alert('Deposit Sucessful - '+method+' - '+amount);   
 }
 
@@ -154,7 +162,7 @@ function depositFailure(method,amount){
             ];
             var randomIndex = Math.floor(Math.random() * errorDescriptions.length);
             var randomError= errorDescriptions[randomIndex];
-             var payload={
+             var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Outcome': 'failure',
@@ -162,7 +170,8 @@ function depositFailure(method,amount){
                         'Amount': amount,
                         'Error': randomError,
             }
-            amplitude.track('outcome', payload);      
+             amp('outcome',eventPayload,userPayload);
+            //amplitude.track('outcome', payload);      
           alert('Deposit Failure - '+method+' - '+amount+' because '+randomError);   
 }
 
@@ -170,14 +179,15 @@ function depositFailure(method,amount){
 
 
 function depositPending(method,amount){
-             var payload={
+             var eventPayload={
                         'Feature': Feature,
                         'Domain': Domain,
                         'Outcome': 'pending',
                         'Instrument': method,
                         'Amount': amount,     
             }
-            amplitude.track('outcome', payload);      
+             amp('outcome',eventPayload,userPayload);
+            //amplitude.track('outcome', payload);      
             alert('Deposit Pending - '+method+' - '+amount);   
 }
 
