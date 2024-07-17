@@ -291,7 +291,7 @@ buttons.forEach(function(button) {
             return payload;
         }
 
-amp(event,payload){
+function amp(event,payload){
     amplitude.track(event, payload); 
 }
      
