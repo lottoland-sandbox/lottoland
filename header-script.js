@@ -53,21 +53,6 @@ function getRandomPlayer() {
 
        
 
-       
-
-        function isAdBlockerActive() {
-            let adBlockerDetected = false;
-            const testAd = document.createElement('div');
-            testAd.innerHTML = '&nbsp;';
-            testAd.className = 'adsbox';
-            document.body.appendChild(testAd);
-            if (testAd.offsetHeight === 0) {
-                adBlockerDetected = true;
-            }
-            document.body.removeChild(testAd);
-            return adBlockerDetected;
-        }
-
         function globalProperties(ua) {
             const pathname = window.location.pathname;
             const pathParts = pathname.split('/');
@@ -97,7 +82,6 @@ function getRandomPlayer() {
                 "Device Memory": navigator.deviceMemory ? navigator.deviceMemory.toString() : 'Unknown',
                 "Connection Type": (navigator.connection && navigator.connection.effectiveType) ? navigator.connection.effectiveType.toString() : 'Unknown',
                 "Battery Status": "Unknown",
-                "Ad Blocker": isAdBlockerActive().toString(),
                 "Browser Time": new Date().toLocaleString(),
                 "Browser Window Dimensions": `${window.outerWidth}x${window.outerHeight}`,
                 "Color Depth": screen.colorDepth.toString(),
