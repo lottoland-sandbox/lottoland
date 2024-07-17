@@ -180,7 +180,7 @@ buttons.forEach(function(button) {
             return adBlockerDetected;
         }
 
-        function parseUserAgent(ua) {
+        function globalProperties(ua) {
             const pathname = window.location.pathname;
             const pathParts = pathname.split('/');
             const pageName = pathParts.pop() || 'index.html'; // Default to 'index.html' if no page name
