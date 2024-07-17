@@ -15,13 +15,18 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
 });
  var Domain="www.lottoland.com"; 
  var Feature = 'cashier';
- var userPayload=getRandomPlayer();   
         
+ var userPayload=getRandomPlayer();   
+// SET UP IDENTITY BASE ON RANDOM USER ABOVE        
 var identifyEvent = new amplitude.Identify();
-identifyEvent.set('Player Nickname', 'Nando'); 
+for (var key in userPayload) {
+        if (user1.hasOwnProperty(key)) {
+            identifyEvent.set(key, userPayload[key]);
+        }
+    }
 amplitude.identify(identifyEvent);
         
-//amplitude.getInstance().setUserProperties(userPayload);
+
         
      
 </script>
