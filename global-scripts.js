@@ -145,16 +145,7 @@ buttons.forEach(function(button) {
 
 
 
-function amp(event,eventPayload,userPayload){
-    let userAgentString = navigator.userAgent;
-    var globalPayload=globalProperties(userAgentString);
-    var payload=mergePayloads(eventPayload,globalPayload,userPayload);
-    amplitude.track(event, payload); 
-}
-     
-function mergePayloads(payload1, payload2,payload3) {
-    return Object.assign({}, payload1, payload2, payload3);
-}
+ 
 
 
 
