@@ -295,3 +295,6 @@ function amp(event,payload){
     amplitude.track(event, payload); 
 }
      
+function mergePayloads(payload1, payload2) {
+    return Object.assign({}, payload1, payload2);
+}
