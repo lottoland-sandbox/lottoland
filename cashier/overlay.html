@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Overlay - v1.8</title>
+    <title>Overlay - v1.9</title>
     <link rel="stylesheet" type="text/css" href="/lottoland/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
      <script src="/lottoland/header-script.js"></script>
@@ -31,7 +31,7 @@ var userPayload=getRandomPlayer();
 <!-- PAYMENT AMOUNT -->     
 <div id="step1" class="step1">  
 <!-- BACK BUTTON -->    
-    <a href="#" onclick="window.location.href = 'entrypoints.html'" >Back</a>
+      <a href="#" onclick="window.location.href = 'entrypoints.html'" data-track-container="cashier" data-track-object="link" data-track-name="back" >Back</a>
 </br>
 
     
@@ -39,29 +39,29 @@ var userPayload=getRandomPlayer();
      <div id="notification" class="notification">
         <img src="warning.png" alt="Warning Icon">
         <p>It is important you verify your account</p>
-        <a href="#">Upload documents now</a>
+        <a href="#" data-track-container="verify" data-track-object="link" data-track-name="verifyId"  >Upload documents now</a>
     </div>
 <hr>    
     <p>How much would you like to add?</p>
 <!-- QUICK ADD BUTTONS -->    
 <div class="quick-buttons-container">    
     <div class="buttons">
-        <button >£10</button>
-        <button >£20</button>
-        <button >£50</button>
+        <button  data-track-container="paymentAmount" data-track-object="button" data-track-name="quickButton" data-track-value="£10">£10</button>
+        <button  data-track-container="paymentAmount" data-track-object="button" data-track-name="quickButton" data-track-value="£20">£20</button>
+        <button  data-track-container="paymentAmount" data-track-object="button" data-track-name="quickButton" data-track-value="£50">£50</button>
     </div>
 </div>
     
 <!-- CUSTOM AMOUNT INPUT -->      
 </br>
     <div class="amount-container">
-    <input type="number" id="customAmount" placeholder="Custom Amount">
+     <input type="number" id="customAmount" placeholder="Custom Amount" data-track-container="paymentAmount" data-track-object="field" data-track-name="amount"   >
     </div>
 </br>
 <hr>
 <!-- PROMO CODE LINK -->
     <div id="promo-link">
- <a href="#" onclick="showPromoContainer()">Add promo code</a>
+  <a href="#" onclick="showPromoContainer()" data-track-container="promoCode" data-track-object="link" data-track-name="addPromo"  >Add promo code</a>
 </br>
     </div>
 
@@ -71,7 +71,7 @@ var userPayload=getRandomPlayer();
         <input type="text" id="promoCode" placeholder="Enter code">
         <div id="errorMessage" class="error" style="display: none;">Oops! The code you have entered is not valid. Please check it and try again.</div>
         <div class="buttons">
-            <a href="#" onclick="resetForm(); hidePromoContainer() ">Cancel</a>
+            <a href="#" onclick="resetForm(); hidePromoContainer() " data-track-container="promoCode" data-track-object="link" data-track-name="cancel"  >Cancel</a>
             <button onclick="validateCode()">REDEEM</button>
         </div>
 </div>
@@ -96,10 +96,10 @@ var userPayload=getRandomPlayer();
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="visa">
-    <input type="text" placeholder="Name">
-    <input type="text" placeholder="Card Number">
+    <input type="text" placeholder="Name" data-track-container="paymentDetails" data-track-object="field" data-track-name="name" data-track-instrument="visa" >
+    <input type="text" placeholder="Card Number" data-track-container="paymentDetails" data-track-object="field" data-track-name="cardNumber" data-track-instrument="visa">
      <div class="expiry-date">
-        <select id="expiryMonth">
+        <select id="expiryMonth" data-track-container="paymentDetails" data-track-object="field" data-track-name="expiryMonth" data-track-instrument="visa">
             <option value="" disabled selected>Month</option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -114,7 +114,7 @@ var userPayload=getRandomPlayer();
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        <select id="expiryYear">
+        <select id="expiryYear" data-track-container="paymentDetails" data-track-object="field" data-track-name="expiryYear" data-track-instrument="visa">
             <option value="" disabled selected>Year</option>
             <!-- Generate years dynamically for the next 20 years -->
             <script>
@@ -131,9 +131,9 @@ var userPayload=getRandomPlayer();
         </select>
          
     </div>
-    <input type="text" placeholder="CVV">
+   <input type="text" placeholder="CVV" data-track-container="paymentDetails" data-track-object="field" data-track-name="CVV" data-track-instrument="visa" >
       <div class="buttons">
-            <button onclick="deposit('visa')">DEPOSIT</button>
+             <button onclick="deposit('visa','20.00','paymentDetails')">DEPOSIT (£20)</button>
         </div>
 </div>
 
@@ -144,10 +144,10 @@ var userPayload=getRandomPlayer();
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="mastercard">
-     <input type="text" placeholder="Name">
-    <input type="text" placeholder="Card Number">
-     <div class="expiry-date">
-        <select id="expiryMonth">
+      <input type="text" placeholder="Name" data-track-container="paymentDetails" data-track-object="field" data-track-name="name" data-track-instrument="mastercard">
+    <input type="text" placeholder="Card Number" data-track-container="paymentDetails" data-track-object="field" data-track-name="cardNumber" data-track-instrument="mastercard">
+   
+    <div class="expiry-date"><select id="expiryMonth" data-track-container="paymentDetails" data-track-object="field" data-track-name="expiryMonth" data-track-instrument="mastercard"> <select id="expiryMonth">
             <option value="" disabled selected>Month</option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -162,7 +162,7 @@ var userPayload=getRandomPlayer();
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        <select id="expiryYear">
+          <select id="expiryYearMC" data-track-container="paymentDetails" data-track-object="field" data-track-name="expiryYear" data-track-instrument="mastercard">
             <option value="" disabled selected>Year</option>
             <!-- Generate years dynamically for the next 20 years -->
             <script>
@@ -179,9 +179,9 @@ var userPayload=getRandomPlayer();
         </select>
          
     </div>
-    <input type="text" placeholder="CVV">
+      <input type="text" placeholder="CVV" data-track-container="paymentDetails" data-track-object="field" data-track-name="CVV" data-track-instrument="mastercard">
      <div class="buttons">
-            <button onclick="deposit('mastercard')">DEPOSIT</button>
+             <button onclick="deposit('mastercard','10.00','paymentDetails')">DEPOSIT (£10)</button>
         </div>
 </div>
 
@@ -192,7 +192,7 @@ var userPayload=getRandomPlayer();
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="neteller">
-    <input type="text" placeholder="Account Number">
+    <input type="text" placeholder="Account Number" data-track-container="paymentDetails" data-track-object="field" data-track-name="accountNumber" data-track-instrument="neteller">
      <div class="buttons">
             <button onclick="continue('neteller')">CONTINUE</button>
         </div>
@@ -205,7 +205,7 @@ var userPayload=getRandomPlayer();
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="skrill">
-    <input type="text" placeholder="Email Address">
+     <input type="text" placeholder="Email Address" data-track-container="paymentDetails" data-track-object="field" data-track-name="email" data-track-instrument="skirll">
      <div class="buttons">
             <button onclick="payContinue('skirll')">CONTINUE</button>
         </div>
@@ -218,7 +218,7 @@ var userPayload=getRandomPlayer();
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="paysafecard">
-    <input type="text" placeholder="PIN">
+    <input type="text" placeholder="PIN" data-track-container="paymentDetails" data-track-object="field" data-track-name="PIN" data-track-instrument="paysafe">
      <div class="buttons">
             <button onclick="payContinue('paysafecard')">CONTINUE</button>
         </div>
@@ -231,7 +231,7 @@ var userPayload=getRandomPlayer();
     <div class="arrow">&#9660;</div>
 </div>
 <div class="payment-details" id="paypal">
-    <input type="text" placeholder="PayPal Email">
+   <input type="text" placeholder="PayPal Email" data-track-container="paymentDetails" data-track-object="field" data-track-name="email" data-track-instrument="paypal">
      <div class="buttons">
             <button onclick="payContinue('paypal')">CONTINUE</button>
         </div>
@@ -244,22 +244,23 @@ var userPayload=getRandomPlayer();
         <div class="name">Joe Bloggs</div>
         <div class="masked-card">Mastercard **** 1234</div>
         <div class="expiry-date">12/24</div>
-        <button class="deposit-button">DEPOSIT</button>
+         <button class="deposit-button" onclick="deposit('mastercard','10.00','paymentInstrument')">DEPOSIT (£10)</button>
     </div>
      <div id="instrument-2" class='instrument'>
         <div class="name">Joe Bloggs</div>
         <div class="masked-card">Visa **** 4321</div>
         <div class="expiry-date">01/27</div>
-        <button class="deposit-button">DEPOSIT</button>
+        <button class="deposit-button"  onclick="deposit('visa','20.00','paymentInstrument')" >DEPOSIT (£20)</button>
     </div>
 </div>    
     
 
-<a href="#"  id="addMethod" onclick="showPaymentMethods()">Add new payment method</a> </br>  
-<a href="#" id="useStored" onclick="showPaymentInstruments()">Use stored payment method</a>  </br>
+<a href="#"  id="addMethod" onclick="showPaymentMethods()" data-track-container="paymentMethod" data-track-object="link" data-track-name="newMethod" >Add new payment method</a> </br>  
+<a href="#" id="useStored" onclick="showPaymentInstruments()" data-track-container="paymentMethod" data-track-object="link" data-track-name="storedMethod" >Use stored payment method</a>   </br>
+
 </br>
     
-<a href="#">Set new deposit limit</a></br>
+<a href="#" data-track-container="depositLimits" data-track-object="link" data-track-name="setLimit">Set new deposit limit</a></br>
     
 </div>
   
