@@ -37,7 +37,8 @@ function trackOnFieldFocus(event) {
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain;
         event_properties['Value'] = 'firstfocusin';
-        amplitude.track('click', event_properties);
+        amp('click',event_properties);
+        //amplitude.track('click', event_properties);
     }
 }
 
@@ -195,7 +196,7 @@ buttons.forEach(function(button) {
                 "Device Memory": navigator.deviceMemory ? navigator.deviceMemory.toString() : 'Unknown',
                 "Connection Type": (navigator.connection && navigator.connection.effectiveType) ? navigator.connection.effectiveType.toString() : 'Unknown',
                 "Battery Status": "Unknown",
-                "Ad Blocker Active": isAdBlockerActive().toString(),
+                "Ad Blocker": isAdBlockerActive().toString(),
                 "Browser Time": new Date().toLocaleString(),
                 "Browser Window Dimensions": `${window.outerWidth}x${window.outerHeight}`,
                 "Color Depth": screen.colorDepth.toString(),
