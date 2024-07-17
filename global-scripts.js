@@ -149,23 +149,9 @@ buttons.forEach(function(button) {
             });
         }
 
-        function getDeviceID() {
-            let deviceID = localStorage.getItem('deviceID');
-            if (!deviceID) {
-                deviceID = generateUUID();
-                localStorage.setItem('deviceID', deviceID);
-            }
-            return deviceID;
-        }
+       
 
-        function getSessionID() {
-            let sessionID = sessionStorage.getItem('sessionID');
-            if (!sessionID) {
-                sessionID = generateUUID();
-                sessionStorage.setItem('sessionID', sessionID);
-            }
-            return sessionID;
-        }
+       
 
         function isAdBlockerActive() {
             let adBlockerDetected = false;
@@ -187,8 +173,6 @@ buttons.forEach(function(button) {
             const path = pathParts.join('/');
 
             let payload = {
-                "Device ID": getDeviceID(),
-                "Session ID": getSessionID(),
                 "Device Type": "Unknown",
                 "Operating System": "Unknown",
                 "Operating System Version": "Unknown",
