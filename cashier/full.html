@@ -288,7 +288,7 @@ amplitude.identify(identifyEvent);
                 'Id': 'deposit',
             };
            
-            amp('pageLoad',eventPayload,userPayload);        
+            amplitude.track(event, eventPayload);       
         });
       
     </script>
