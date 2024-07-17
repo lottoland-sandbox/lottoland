@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Parse User Agent Example</title>
+     <title>Parse User Agent Example v1.1</title>
      <script>
          function generateUUID() {
              // Generates a simple UUID
@@ -149,8 +149,7 @@ performance.timeOrigin).toISOString().substr(11, 8) + ' ago'
                      payload["Battery Status"] =
 `${Math.round(battery.level * 100)}% ${battery.charging ? '(Charging)' :
 '(Not Charging)'}`;
-                     console.log(payload);  // Log the payload once
-battery status is retrieved
+                     console.log(payload);  // Log the payload once battery status is retrieved
                  });
              } else {
                  console.log(payload);  // Log the payload immediately
@@ -210,8 +209,7 @@ Object.entries(browserPatterns)) {
                  }
              }
 
-             // Log the payload immediately if battery status is not
-supported
+             // Log the payload immediately if battery status is notsupported
              if (!navigator.getBattery) {
                  console.log(payload);
              }
