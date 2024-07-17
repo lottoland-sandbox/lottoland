@@ -14,6 +14,7 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
 });
  var Domain="www.lottoland.com"; 
  var Feature = 'cashier';
+ var userPayload=getRandomPlayer;       
 // amplitude.track('display', payload);         
 </script>
 </head>
@@ -263,7 +264,7 @@ amplitude.init('535a35b01503cd1dc00df9f74f844368', {
                 'Id': 'deposit',
             };
 
-            amp('pageLoad',eventPayload);        
+            amp('pageLoad',eventPayload,userPayload);        
         });
       
     </script>
