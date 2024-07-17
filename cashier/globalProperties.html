@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Global Props v1.3</title>
+     <title>Global Props v1.4</title>
      <script>
          function generateUUID() {
              return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -36,6 +36,11 @@
          }
 
          function parseUserAgent(ua) {
+             const pathname = window.location.pathname;
+             const pathParts = pathname.split('/');
+             const pageName = pathParts.pop() || 'index.html'; // Default to 'index.html' if no page name
+             const path = pathParts.join('/');
+
              let payload = {
                  "Device ID": getDeviceID(),
                  "Device Type": "Unknown",
@@ -45,7 +50,8 @@
                  "Browser Version": "Unknown",
                  "Screen Resolution": `${screen.width}x${screen.height}`,
                  "Page Title": document.title,
-                 "Page Path": window.location.pathname,
+                 "Path": path,
+                 "Page Name": pageName,
                  "Referrer": document.referrer,
                  "User Agent": ua,
                  "Language": navigator.language,
@@ -56,9 +62,9 @@
                  "Online Status": navigator.onLine.toString(),
                  "Touch Support": ('ontouchstart' in window || navigator.maxTouchPoints > 0).toString(),
                  "Do Not Track": navigator.doNotTrack,
-                 "Hardware Concurrency": navigator.hardwareConcurrency.toString(),
-                 "Device Memory": (navigator.deviceMemory || 'Unknown').toString(),
-                 "Connection Type": (navigator.connection ? navigator.connection.effectiveType : 'Unknown').toString(),
+                 "Hardware Concurrency": navigator.hardwareConcurrency ? navigator.hardwareConcurrency.toString() : 'Unknown',
+                 "Device Memory": navigator.deviceMemory ? navigator.deviceMemory.toString() : 'Unknown',
+                 "Connection Type": navigator.connection ? (navigator.connection.effectiveType ? navigator.connection.effectiveType.toString() : 'Unknown') : 'Unknown',
                  "Battery Status": "Unknown",
                  "Ad Blocker Active": isAdBlockerActive().toString(),
                  "Browser Time": new Date().toLocaleString(),
@@ -71,8 +77,9 @@
                  "Clipboard Access": (!!navigator.clipboard).toString(),
                  "Fullscreen Support": (!!document.fullscreenEnabled).toString(),
                  "Notification Support": ('Notification' in window).toString(),
-                 "Network Type": (navigator.connection ? navigator.connection.type : 'Unknown').toString(),
-                 "Network Download Speed": (navigator.connection ? navigator.connection.downlink + ' Mbps' : 'Unknown').toString(),
+                 "Network Type": navigator.connection ? (navigator.connection.type ? navigator.connection.type.toString() : 'Unknown') : 'Unknown',
+                 "Network Download Speed": navigator.connection ? (navigator.connection.downlink ? navigator.connection.downlink + ' Mbps' : 'Unknown') : 'Unknown',
+                 "Query String": window.location.search
              };
 
              if (navigator.getBattery) {
