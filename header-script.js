@@ -1,9 +1,10 @@
 //RANDOM USERS
 var user1 = {
     'Player Name': 'MJ',
-    'Account Status': 'VIP',
+    'Account Status': 'standard',
     'Verification Status': 'verified',
     'Player Number': '1234',
+    'Player Tier': 'VIP',
     'Balance': '10.23',
 };
 
@@ -12,6 +13,7 @@ var user2 = {
     'Account Status': 'suspended',
     'Verification Status': 'unverified',
     'Player Number': '4321',
+    'Player Tier': 'NON VIP',
     'Balance': '102.23',
 };
 
@@ -20,6 +22,7 @@ var user3 = {
     'Account Status': 'closed',
     'Verification Status': 'unverified',
     'Player Number': '2222',
+    'Player Tier': 'GOLD',
     'Balance': '0.22',
 };
 
@@ -28,6 +31,7 @@ var user4 = {
     'Account Status': 'self excluded',
     'Verification Status': 'pending',
     'Player Number': '18882',
+    'Player Tier': 'PLATINUM',
     'Balance': '9.11',
 };
 
