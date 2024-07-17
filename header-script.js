@@ -1,6 +1,6 @@
 //RANDOM USERS
 var user1 = {
-    'Player Name': 'MJ',
+  //  'Player Name': 'MJ',
     'Account Status': 'standard',
     'Verification Status': 'verified',
     'Player Number': '1234',
@@ -9,7 +9,7 @@ var user1 = {
 };
 
 var user2 = {
-    'Player Name': 'ML',
+  //  'Player Name': 'ML',
     'Account Status': 'suspended',
     'Verification Status': 'unverified',
     'Player Number': '4321',
@@ -18,7 +18,7 @@ var user2 = {
 };
 
 var user3 = {
-    'Player Name': 'PG',
+ //   'Player Name': 'PG',
     'Account Status': 'closed',
     'Verification Status': 'unverified',
     'Player Number': '2222',
@@ -27,7 +27,7 @@ var user3 = {
 };
 
 var user4 = {
-    'Player Name': 'JF',
+//    'Player Name': 'JF',
     'Account Status': 'self excluded',
     'Verification Status': 'pending',
     'Player Number': '18882',
