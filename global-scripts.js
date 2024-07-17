@@ -85,7 +85,8 @@ function trackLinkClick(event) {
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain;
-        amplitude.track('click', event_properties,userPayload);
+        amp('click',event_properties,userPayload);
+       //amplitude.track('click', event_properties);
     }
 }
 
@@ -130,7 +131,8 @@ function trackButtonClick(event) {
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
         event_properties['Domain'] = Domain;
-        amplitude.track('click', event_properties);
+         amp('click',event_properties,userPayload);
+        //amplitude.track('click', event_properties);
     }
 }
 
