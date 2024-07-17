@@ -3,12 +3,10 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Global Props v1.2</title>
+     <title>Global Props v1.3</title>
      <script>
          function generateUUID() {
-             // Generates a simple UUID
-             return
-'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                  const r = Math.random() * 16 | 0;
                  const v = c === 'x' ? r : (r & 0x3 | 0x8);
                  return v.toString(16);
@@ -52,40 +50,38 @@
                  "User Agent": ua,
                  "Language": navigator.language,
                  "Platform": navigator.platform,
-                 "Cookies Enabled": navigator.cookieEnabled,
-                 "Viewport Size":`${window.innerWidth}x${window.innerHeight}`,
+                 "Cookies Enabled": navigator.cookieEnabled.toString(),
+                 "Viewport Size": `${window.innerWidth}x${window.innerHeight}`,
                  "Time Zone": Intl.DateTimeFormat().resolvedOptions().timeZone,
-                 "Online Status": navigator.onLine,
-                 "Touch Support": 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+                 "Online Status": navigator.onLine.toString(),
+                 "Touch Support": ('ontouchstart' in window || navigator.maxTouchPoints > 0).toString(),
                  "Do Not Track": navigator.doNotTrack,
-                 "Hardware Concurrency": navigator.hardwareConcurrency,
-                 "Device Memory": navigator.deviceMemory || 'Unknown',
-                 "Connection Type": navigator.connection ? navigator.connection.effectiveType : 'Unknown',
+                 "Hardware Concurrency": navigator.hardwareConcurrency.toString(),
+                 "Device Memory": (navigator.deviceMemory || 'Unknown').toString(),
+                 "Connection Type": (navigator.connection ? navigator.connection.effectiveType : 'Unknown').toString(),
                  "Battery Status": "Unknown",
-                 "Ad Blocker Active": isAdBlockerActive(),
+                 "Ad Blocker Active": isAdBlockerActive().toString(),
                  "Browser Time": new Date().toLocaleString(),
                  "Browser Window Dimensions": `${window.outerWidth}x${window.outerHeight}`,
-                 "Color Depth": screen.colorDepth,
+                 "Color Depth": screen.colorDepth.toString(),
                  "Available Screen Size": `${screen.availWidth}x${screen.availHeight}`,
-                 "Device Pixel Ratio": window.devicePixelRatio,
-                 "Media Device Support": !!(navigator.mediaDevices && navigator.mediaDevices.enumerateDevices),
-                 "History Length": history.length,
-                 "Clipboard Access": !!navigator.clipboard,
-                 "Fullscreen Support": !!document.fullscreenEnabled,
-                 "Notification Support": 'Notification' in window,
-                 "Network Type": navigator.connection ? navigator.connection.type : 'Unknown',
-                 "Network Download Speed": navigator.connection ? navigator.connection.downlink + ' Mbps' : 'Unknown',
-                
+                 "Device Pixel Ratio": window.devicePixelRatio.toString(),
+                 "Media Device Support": (!!(navigator.mediaDevices && navigator.mediaDevices.enumerateDevices)).toString(),
+                 "History Length": history.length.toString(),
+                 "Clipboard Access": (!!navigator.clipboard).toString(),
+                 "Fullscreen Support": (!!document.fullscreenEnabled).toString(),
+                 "Notification Support": ('Notification' in window).toString(),
+                 "Network Type": (navigator.connection ? navigator.connection.type : 'Unknown').toString(),
+                 "Network Download Speed": (navigator.connection ? navigator.connection.downlink + ' Mbps' : 'Unknown').toString(),
              };
 
-             // Attempt to get battery status if supported
              if (navigator.getBattery) {
                  navigator.getBattery().then(battery => {
                      payload["Battery Status"] = `${Math.round(battery.level * 100)}% ${battery.charging ? '(Charging)' : '(Not Charging)'}`;
-                     console.log(payload);  // Log the payload once battery status is retrieved
+                     console.log(payload);
                  });
              } else {
-                 console.log(payload);  // Log the payload immediately if battery status is not supported
+                 console.log(payload);
              }
 
              let deviceTypePatterns = {
@@ -110,7 +106,6 @@
                  "Internet Explorer": /MSIE (\d+\.\d+);/i
              };
 
-             // Detect Device Type
              for (let [device, pattern] of Object.entries(deviceTypePatterns)) {
                  if (pattern.test(ua)) {
                      payload["Device Type"] = device;
@@ -118,7 +113,6 @@
                  }
              }
 
-             // Detect Operating System and Version
              for (let [os, pattern] of Object.entries(osPatterns)) {
                  let match = ua.match(pattern);
                  if (match) {
@@ -128,7 +122,6 @@
                  }
              }
 
-             // Detect Browser and Version
              for (let [browser, pattern] of Object.entries(browserPatterns)) {
                  let match = ua.match(pattern);
                  if (match) {
@@ -138,7 +131,6 @@
                  }
              }
 
-             // Log the payload immediately if battery status is notsupported
              if (!navigator.getBattery) {
                  console.log(payload);
              }
@@ -146,7 +138,6 @@
              return payload;
          }
 
-         // Example usage:
          document.addEventListener('DOMContentLoaded', function() {
              let userAgentString = navigator.userAgent;
              parseUserAgent(userAgentString);
