@@ -14,7 +14,7 @@ function validateCode() {
                 }
                 
                  
-                amplitude.track('click', eventPayload);              
+                amp('click', eventPayload);              
                 alert('Code redeemed successfully!');
 
                         
@@ -29,7 +29,7 @@ function validateCode() {
                         'Value': code,
                         'Outcome': 'failure',    
                 }
-                amplitude.track('click', eventPayload);      
+                amp('click', eventPayload);      
             }
         }
 
@@ -44,7 +44,7 @@ function validateCode() {
                         'Container': 'promoCode',
                         
             }
-              amplitude.track('display', eventPayload);      
+              amp('display', eventPayload);      
         }
 
         function hidePromoContainer() {
@@ -71,7 +71,7 @@ function validateCode() {
                        
             }
             
-            amplitude.track('display', eventPayload);      
+            amp('display', eventPayload);      
                         
             }
         }
@@ -123,7 +123,7 @@ function deposit(method,amount,container){
                         'Instrument': method,
                         'Amount': amount,     
             }
-            amplitude.track('click', eventPayload);   
+            amp('click', eventPayload);   
             callRandomDepositOutcome(method,amount);  
             
 }
@@ -143,7 +143,7 @@ function depositSuccess(method,amount){
                         'Instrument': method,
                         'Amount': amount,     
             }
-            amplitude.track('outcome', eventPayload);       
+            amp('outcome', eventPayload);       
          alert('Deposit Sucessful - '+method+' - '+amount);   
 }
 
@@ -165,7 +165,7 @@ function depositFailure(method,amount){
                         'Amount': amount,
                         'Error': randomError,
             }
-            amplitude.track('outcome', eventPayload);      
+            amp('outcome', eventPayload);      
           alert('Deposit Failure - '+method+' - '+amount+' because '+randomError);   
 }
 
@@ -180,7 +180,7 @@ function depositPending(method,amount){
                         'Instrument': method,
                         'Amount': amount,     
             }
-            amplitude.track('outcome', eventPayload);      
+            amp('outcome', eventPayload);      
             alert('Deposit Pending - '+method+' - '+amount);   
 }
 
