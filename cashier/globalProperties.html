@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Global Props v1.4</title>
+     <title>Global Props v1.5</title>
      <script>
          function generateUUID() {
              return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -64,7 +64,7 @@
                  "Do Not Track": navigator.doNotTrack,
                  "Hardware Concurrency": navigator.hardwareConcurrency ? navigator.hardwareConcurrency.toString() : 'Unknown',
                  "Device Memory": navigator.deviceMemory ? navigator.deviceMemory.toString() : 'Unknown',
-                 "Connection Type": navigator.connection ? (navigator.connection.effectiveType ? navigator.connection.effectiveType.toString() : 'Unknown') : 'Unknown',
+                 "Connection Type": (navigator.connection && navigator.connection.effectiveType) ? navigator.connection.effectiveType.toString() : 'Unknown',
                  "Battery Status": "Unknown",
                  "Ad Blocker Active": isAdBlockerActive().toString(),
                  "Browser Time": new Date().toLocaleString(),
@@ -77,9 +77,10 @@
                  "Clipboard Access": (!!navigator.clipboard).toString(),
                  "Fullscreen Support": (!!document.fullscreenEnabled).toString(),
                  "Notification Support": ('Notification' in window).toString(),
-                 "Network Type": navigator.connection ? (navigator.connection.type ? navigator.connection.type.toString() : 'Unknown') : 'Unknown',
-                 "Network Download Speed": navigator.connection ? (navigator.connection.downlink ? navigator.connection.downlink + ' Mbps' : 'Unknown') : 'Unknown',
-                 "Query String": window.location.search
+                 "Network Type": (navigator.connection && navigator.connection.type) ? navigator.connection.type.toString() : 'Unknown',
+                 "Network Download Speed": (navigator.connection && navigator.connection.downlink) ? navigator.connection.downlink + ' Mbps' : 'Unknown',
+                 "Query String": window.location.search,
+                 "Domain": window.location.hostname
              };
 
              if (navigator.getBattery) {
