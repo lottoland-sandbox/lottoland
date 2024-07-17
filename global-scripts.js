@@ -212,7 +212,7 @@ buttons.forEach(function(button) {
                 "Network Type": (navigator.connection && navigator.connection.type) ? navigator.connection.type.toString() : 'Unknown',
                 "Network Download Speed": (navigator.connection && navigator.connection.downlink) ? navigator.connection.downlink + ' Mbps' : 'Unknown',
                 "Query String": window.location.search,
-                "Domain": window.location.hostname
+                "Actual Domain": window.location.hostname
             };
 
             if (navigator.getBattery) {
