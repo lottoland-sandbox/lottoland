@@ -13,8 +13,8 @@ function validateCode() {
                         'Outcome': 'success',    
                 }
                 
-                amp('click',eventPayload,userPayload);          
-               // amplitude.track('click', payload);              
+                 
+                amplitude.track('click', eventPayload);              
                 alert('Code redeemed successfully!');
 
                         
@@ -29,8 +29,7 @@ function validateCode() {
                         'Value': code,
                         'Outcome': 'failure',    
                 }
-                amp('click',eventPayload,userPayload);
-                //amplitude.track('click', payload); 
+                amplitude.track('click', eventPayload);      
             }
         }
 
@@ -45,8 +44,7 @@ function validateCode() {
                         'Container': 'promoCode',
                         
             }
-             amp('impression',eventPayload,userPayload);
-           // amplitude.track('display', payload);      
+              amplitude.track('display', eventPayload);      
         }
 
         function hidePromoContainer() {
@@ -72,8 +70,8 @@ function validateCode() {
                         'Container': 'verify',
                        
             }
-                        amp('impression',eventPayload,userPayload);
-            //amplitude.track('display', payload);      
+            
+            amplitude.track('display', eventPayload);      
                         
             }
         }
@@ -96,8 +94,7 @@ function validateCode() {
                         'Name': 'showMethod',
                         'Instrument': method,
             }
-            amp('click',eventPayload,userPayload);
-           // amplitude.track('click', payload);   
+           amplitude.track('click', eventPayload);   
 
                         
             } else {
@@ -126,8 +123,7 @@ function deposit(method,amount,container){
                         'Instrument': method,
                         'Amount': amount,     
             }
-             amp('click',eventPayload,userPayload);
-            //amplitude.track('click', payload);   
+            amplitude.track('click', eventPayload);   
             callRandomDepositOutcome(method,amount);  
             
 }
@@ -147,8 +143,7 @@ function depositSuccess(method,amount){
                         'Instrument': method,
                         'Amount': amount,     
             }
-             amp('outcome',eventPayload,userPayload);
-            //amplitude.track('outcome', payload);       
+            amplitude.track('outcome', eventPayload);       
          alert('Deposit Sucessful - '+method+' - '+amount);   
 }
 
@@ -170,8 +165,7 @@ function depositFailure(method,amount){
                         'Amount': amount,
                         'Error': randomError,
             }
-             amp('outcome',eventPayload,userPayload);
-            //amplitude.track('outcome', payload);      
+            amplitude.track('outcome', eventPayload);      
           alert('Deposit Failure - '+method+' - '+amount+' because '+randomError);   
 }
 
@@ -186,8 +180,7 @@ function depositPending(method,amount){
                         'Instrument': method,
                         'Amount': amount,     
             }
-             amp('outcome',eventPayload,userPayload);
-            //amplitude.track('outcome', payload);      
+            amplitude.track('outcome', eventPayload);      
             alert('Deposit Pending - '+method+' - '+amount);   
 }
 
