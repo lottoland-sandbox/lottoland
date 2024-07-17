@@ -182,7 +182,7 @@ buttons.forEach(function(button) {
                 "Browser": "Unknown",
                 "Browser Version": "Unknown",
                 "Screen Resolution": `${screen.width}x${screen.height}`,
-                "Page Title": document.title,
+                "Title": document.title,
                 "Path": path,
                 "Page Name": pageName,
                 "Referrer": document.referrer,
