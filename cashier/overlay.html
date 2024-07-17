@@ -280,7 +280,7 @@ var userPayload=getRandomPlayer();
                 'Id': 'deposit',
             };
            
-            amp('impression',eventPayload,userPayload);        
+             amplitude.track('impression', eventPayload);         
          });
     </script>
 </body>
